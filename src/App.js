@@ -1,12 +1,11 @@
 // Libraries
 import React from "react";
-import { connect } from "react-redux";
 
 // Components
 import LoginForm from "./components/LoginForm";
 
 // Returned Component
-function App({ user }) {
+function App() {
   return (
     <div className="app">
       <LoginForm />

@@ -1,11 +1,17 @@
 // Constants
-import { LOGIN } from "../actions/userAction";
+import { LOGIN, NEW_USER } from "../actions/userAction";
 
 // Initial State
 const initialState = {
-  username: "",
-  password: "",
-  role: "",
+  user: {
+    firstName: "",
+    lastName: "",
+    username: "",
+    password: "",
+    email: "",
+    role: "",
+    user_id: null
+  }
 };
 
 // User Reducer
@@ -14,9 +20,12 @@ const userReducer = (state = initialState, action) => {
     case LOGIN:
       return {
         ...state,
-        username: action.payload.username,
-        password: action.payload.password,
-        role: action.payload.role
+        user: action.payload
+      };
+    case NEW_USER:
+      return {
+        ...state,
+        user: action.payload
       };
     default:
       return state;

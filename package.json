@@ -1,6 +1,6 @@
 {
   "name": "anywhere-fitness-front-end",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
@@ -19,6 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "less": "less-watch-compiler",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -40,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "less": "^4.1.2",
+    "less-watch-compiler": "^1.16.3"
   }
 }

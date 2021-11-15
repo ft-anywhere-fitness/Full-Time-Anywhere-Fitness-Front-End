@@ -1,5 +1,7 @@
 // Libraries
 import React from "react";
+import Landing from "./components/Landing";
+import ClientReviews from "./components/ClientReviews";
 
 // Components
 // import LoginForm from "./components/LoginForm";
@@ -10,6 +12,8 @@ function App() {
   return (
     <div className="app">
       <SignUpForm />
+      <Landing/>
+      <ClientReviews/>
     </div>
   );
 }

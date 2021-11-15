@@ -1,35 +1,46 @@
 import React from "react";
+import theRockWithquotes from "../assets/theRockWithquotes.jpg";
+import abs2 from "../assets/abs2.jpg"
+import squats from "../assets/squats.jpg"
+import legs from "../assets/legs.jpg"
+
 
 export default function Landing() {
+
     return(
+
         <div className = "quickLooks">
+            <div className = "top section">
+                <img src = {theRockWithquotes} alt = "The Rock"/>
+            </div>
+
             <div className = "first section">
                 <div className = "img">
-                    <img src = "" alt = ""/>
+                    <img src = {squats} alt = "Person Squatting"/>
                 </div>
                 <div className = "paragraph">
-                    <h2></h2>
-                    <p> </p>
+                    <h2>Monster Strength</h2>
+                    <p>Here at anywhere fitness you can build superhuman strength and if you lift here long enough you can even lift car's!</p>
                 </div>
             </div>
 
             <div className = "second section">
                 <div className = "paragraph">
-                    <p> </p>
-                    <h2></h2>
+                    <p>Work out at anywhere fitness to attain a physique even the god's would envy! Who doesn't love post workout selfies? With our top of the line mirrors the perfect selfy is one click away.</p>
+                    <h2>Godlike Physique</h2>
                 </div>
                 <div className = "img">
-                    <img src = "" alt = ""/>
+                    <img src = {abs2} alt = "Person Posing"/>
                 </div>
             </div>
 
             <div className = "third section">
                 <div className = "img">
-                    <img src = "" alt = ""/>
+                    <img src = {legs} alt = "Person using the leg curl machine."/>
                 </div>
                 <div className = "paragraph">
-                    <h2></h2>
-                    <p> </p>
+                    <h2>Equipment</h2>
+                    <p> Access to state of the art gym equipment to sculpt your body into a masterpiece comparable to that of Arnold Schwarzenegger!</p>
                 </div>
             </div>
         </div>

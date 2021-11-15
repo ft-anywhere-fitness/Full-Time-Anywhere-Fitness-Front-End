@@ -11,6 +11,7 @@ const LoginForm = ({ login }) => {
     firstName: "",
     lastName: "",
     username: "",
+    password: "",
     email: "",
     role: "",
     user_id: null

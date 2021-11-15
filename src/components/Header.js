@@ -7,7 +7,7 @@ export default function Header(){
     return(
         <header>
             <nav>
-                <h1 className='header-item'>Anywhere Fitness</h1>
+                <h1 className='header-item'>Anywhere Fitness </h1>
                 <NavLink  className='header-item underline'  to='/login'>
                     Login
                 </NavLink>

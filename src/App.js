@@ -1,5 +1,7 @@
 // Libraries
 import React from "react";
+import Landing from "./components/Landing";
+import ClientReviews from "./components/ClientReviews";
 
 // Components
 import Header from "./components/Header";

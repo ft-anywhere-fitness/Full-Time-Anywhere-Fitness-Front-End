@@ -8,6 +8,9 @@ import { Provider } from "react-redux";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 
+// Style Sheet
+import "./index.css";
+
 // Components
 import App from './App';
 

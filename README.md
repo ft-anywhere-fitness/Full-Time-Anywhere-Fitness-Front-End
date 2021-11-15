@@ -1,5 +1,23 @@
 # Anywhere Fitness Front-end
 
+## Project Setup
+
+1. Clone down the project (do **not** fork the repository).
+
+2. While in the root directory of the project, run `npm install` to install all of the project dependencies.
+
+3. Run `npm start` to start up the app.
+
+## Git Flow
+
+- For this project, please read and follow [this guide](https://www.notion.so/Git-for-Build-Sprint-20ce2d09dc0e47b1af5d51821b54b810) that was provided by Edd Burke.
+
+- Make sure to **not** work directly on `main`. Always create a feature branch with an appropriate name.
+
+- Post in Slack ahead of time what feature you will be working on in the app, so that people don't accidentally work on the same feature. Communication is key!
+
+- Please post every pull requests you make into the Slack channel when it is ready for review. This step is essential to keep us all on the same page. Every pull request needs at least one review before it can be merged (this should prevent merge conflicts from happening).
+
 ## Flowchart of App State
 
 ![flowchart of anywhere-fitness app state](./anywhere-fitness-flowchart-front-end.png)

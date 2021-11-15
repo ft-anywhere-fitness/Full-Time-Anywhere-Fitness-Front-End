@@ -1,12 +1,17 @@
 // Libraries
 import React, { useState } from "react";
+import { connect } from "react-redux";
 
-const SignUpForm = () => {
+// Action
+import { newUser } from "../actions/userAction";
+
+const SignUpForm = ({ newUser }) => {
   // State Management
   const [credentials, setCredentials] = useState({
     firstName: "",
     lastName: "",
     username: "",
+    password: "",
     email: "",
     role: "",
     user_id: null
@@ -22,7 +27,7 @@ const SignUpForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(credentials);
+    newUser(credentials);
   };
 
   // Returned Component
@@ -35,27 +40,27 @@ const SignUpForm = () => {
           type="text"
           placeholder="First"
           onChange={handleChange}
-          value={credentials.username}
+          value={credentials.firstName}
         />
       </label>
       <label>
         Last Name:
         <input
-          name="Last"
+          name="lastName"
           type="text"
           placeholder="Last"
           onChange={handleChange}
-          value={credentials.username}
+          value={credentials.lastName}
         />
       </label>
       <label>
         Email:
         <input
-          name="role"
-          type="radio"
+          name="email"
+          type="email"
           placeholder="example@something.com"
           onChange={handleChange}
-          value="Instructor"
+          value={credentials.email}
         />
       </label>
       <label>
@@ -104,4 +109,8 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+const mapStateToProps = (state) => {
+  return { user: state.user };
+};
+
+export default connect(mapStateToProps, { newUser })(SignUpForm);

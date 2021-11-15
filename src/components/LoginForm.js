@@ -8,9 +8,12 @@ import { login } from "../actions/userAction";
 const LoginForm = ({ login }) => {
   // State Management
   const [credentials, setCredentials] = useState({
+    firstName: "",
+    lastName: "",
     username: "",
-    password: "",
-    role: "Instructor"
+    email: "",
+    role: "",
+    user_id: null
   });
 
   // Event Handlers

@@ -8,6 +8,10 @@
 
 3. Run `npm start` to start up the app.
 
+4. Before merging a branch, run `git pull origin main` to stay up to date with `main`.
+
+5. When you pull from `main`, be sure to run `npm install` to update your dependencies.
+
 ## Git Flow
 
 - For this project, please read and follow [this guide](https://www.notion.so/Git-for-Build-Sprint-20ce2d09dc0e47b1af5d51821b54b810) that was provided by Edd Burke.

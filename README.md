@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Anywhere Fitness Front-end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Setup
 
-## Available Scripts
+1. Clone down the project (do **not** fork the repository).
 
-In the project directory, you can run:
+2. While in the root directory of the project, run `npm install` to install all of the project dependencies.
 
-### `npm start`
+3. Run `npm start` to start up the app.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Git Flow
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- For this project, please read and follow [this guide](https://www.notion.so/Git-for-Build-Sprint-20ce2d09dc0e47b1af5d51821b54b810) that was provided by Edd Burke.
 
-### `npm test`
+- Make sure to **not** work directly on `main`. Always create a feature branch with an appropriate name.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Post in Slack ahead of time what feature you will be working on in the app, so that people don't accidentally work on the same feature. Communication is key!
 
-### `npm run build`
+- Please post every pull requests you make into the Slack channel when it is ready for review. This step is essential to keep us all on the same page. Every pull request needs at least one review before it can be merged (this should prevent merge conflicts from happening).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Flowchart of App State
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![flowchart of anywhere-fitness app state](./anywhere-fitness-flowchart-front-end.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ☝️ **Pitch**
 
-### `npm run eject`
+These days, fitness classes can be held anywhere- a park, an unfinished basement or a garage- not just at a traditional gym. Certified fitness instructors need an easy way to take the awkwardness out of attendance taking and client payment processing.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+While you could use several mobile apps to accomplish this, **AnywhereFitness** is the all-in-one solution to meet your “on-location” fitness class needs. AnywhereFitness makes it painless for Instructors and Clients alike to hold and attend Fitness classes wherever they might be held.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Instructors can take attendance, request and process payments, create virtual “punch passes” for each type of class offered, alert clients of cancellations or location changes and so much more. Clients can easily find out information on classes - location, class size, start time and duration, as well as reschedule or cancel an upcoming appointment or reservation right from the mobile app.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## ✅  **MVP**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. User can create/register as a `client` and login with the registered credentials.
 
-## Learn More
+2. User can create/register as an `instructor` by entering an additional Auth Code during signup, and can login with the registered credentials.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. `client` and `instructor` are both presented with the appropriate on-boarding walkthrough on first sign-in, with an option to skip it.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Authenticated `Instructor` can create update and delete a `class`. At a minimum, each `class` must have the following properties:
 
-### Code Splitting
+- `Name`
+- `Type`
+- `Start time`
+- `Duration`
+- `Intensity level`
+- `Location`
+- `Current number of registered attendees`
+- `Max class size`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. Authenticated `client` can search for available classes. At a minimum, they must be able to search by the following criteria:
 
-### Analyzing the Bundle Size
+- `class time`
+- `class date`
+- `class duration`
+- `class type`
+- `intensity level`
+- `class location`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+6. Authenticated `instructor` can create virtual punch pass categories for each type of group fitness class they offer (yoga, insanity, RIPPED, pilates, etc.)
 
-### Making a Progressive Web App
+7. Authenticated `user` can reserve a spot in a `class` with available seats open, and can reschedule or cancel their current `reservation` from the mobile app.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🏃‍♀️**Stretch**
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Implement payments using PayPal, Stripe or another 3rd party API.

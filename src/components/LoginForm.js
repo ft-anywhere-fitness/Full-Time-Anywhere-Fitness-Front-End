@@ -1,11 +1,16 @@
 // Libraries
 import React, { useState } from "react";
+import { connect } from "react-redux";
 
-const LoginForm = () => {
+// Actions
+import { login } from "../actions/userAction";
+
+const LoginForm = ({ login }) => {
   // State Management
   const [credentials, setCredentials] = useState({
     username: "",
-    password: ""
+    password: "",
+    role: "Instructor"
   });
 
   // Event Handlers
@@ -18,7 +23,7 @@ const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(credentials);
+    login(credentials);
   };
 
   // Returned Component
@@ -49,4 +54,8 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+const mapStateToProps = (state) => {
+  return { user: state.user };
+};
+
+export default connect(mapStateToProps, { login })(LoginForm);

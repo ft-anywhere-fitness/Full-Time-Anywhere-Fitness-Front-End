@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom'
-import { axiosWithAuth } from './../utils/AxiosWithAuth' 
+// Libraries
+import React from 'react';
+import { connect } from 'react-redux';
 
+// Components
+import Class from "./Class";
 
 const Classes = (props) => {
-    const [fitnessClass, setFitnessClass] = useState('')
+  const { classes } = props;
+  return (
+    <div>
+      {classes.map((session) => {
+        return (
+          <Class key={session.class_id} session={session} />
+        );
+      })}
+    </div>
+  );
+};
 
-    const { id } = useParams();
-    const { push } = useHistory();
+const mapStateToProps = (state) => {
+  return { classes: state.classes };
+};
 
-    useEffect(() => {
-        axiosWithAuth()
-        .get(`dummydata`)
-            .then(res => {
-                setFitnessClass(res.data)
-            })
-            .catch(err => {
-                console.error(err);
-            })
-        
-    }, []);
-}
-
-export default Classes;
+export default connect(mapStateToProps, null)(Classes);

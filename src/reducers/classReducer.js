@@ -7,11 +7,10 @@ const initialState = [
     class_id: 1,
     name: "Precision Movements with Greg",
     type: 'Olympic Lifting',
-    startTime: '09:00:00',
+    startTime: '09:00',
     duration: {
       hours: "1",
-      minutes: "30",
-      seconds: "0"
+      minutes: "30"
     },
     intensityLevel: 'Very Intensive',
     location: '8052 State Lane Victoria, TX 77904',
@@ -22,11 +21,10 @@ const initialState = [
     class_id: 2,
     name: 'Pure Calisthenics with Amy',
     type: 'Calisthenics',
-    startTime: '10:30:00',
+    startTime: '10:30',
     duration: {
       hours: "2",
-      minutes: "0",
-      seconds: "0"
+      minutes: "0"
     },
     intensityLevel: 'Fairly Intensive',
     location: '830 Roehampton Ave. Huntington, NY 11743',
@@ -37,11 +35,10 @@ const initialState = [
     class_id: 3,
     name: 'Mind Over Matter Lifting with Samuel',
     type: 'Bodybuilding',
-    startTime: '11:00:00',
+    startTime: '11:00',
     duration: {
       hours: "2",
-      minutes: "0",
-      seconds: "0"
+      minutes: "0"
     },
     intensityLevel: 'Fairly Intensive',
     location: '665 Clay Road Easton, PA 18042',
@@ -52,11 +49,10 @@ const initialState = [
     class_id: 4,
     name: 'Max Effort Lifting with Joey',
     type: 'Powerlifting',
-    startTime: '09:30:00',
+    startTime: '09:30',
     duration: {
       hours: "1",
-      minutes: "0",
-      seconds: "0"
+      minutes: "0"
     },
     intensityLevel: 'Extremely Intensive',
     location: '318 Clark Lane Wilmington, MA 01887',

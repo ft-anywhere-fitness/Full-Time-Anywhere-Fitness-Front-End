@@ -1,7 +1,6 @@
 // Libraries
 // import AxiosWithAuth from "../utils/axiosWithAuth";
 import React, { useState } from "react";
-import { useHistory } from "react-router";
 import { connect } from "react-redux";
 
 // Actions
@@ -25,7 +24,6 @@ const initialValues = {
 
 function AddClassForm({ addNewClass }) {
   const [classValues, setClassValues] = useState(initialValues);
-  // const { push } = useHistory();
 
   const handleChange = e => {
     setClassValues({ ...classValues, [e.target.name]: e.target.value });

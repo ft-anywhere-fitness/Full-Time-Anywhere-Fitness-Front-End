@@ -5,14 +5,12 @@ import ClientReviews from "./components/ClientReviews";
 
 // Components
 import Header from "./components/Header";
-import Classes from "./components/Classes";
 
 // Returned Component
 function App() {
   return (
     <div className="app">
       <Header />
-      <Classes />
     </div>
   );
 }

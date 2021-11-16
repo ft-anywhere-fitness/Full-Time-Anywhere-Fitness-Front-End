@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 // Actions
 import { addNewClass } from "../actions/classActions";
 
+// Initial State (this is subject to change)
 const initialValues = {
   name: "",
   type: "",

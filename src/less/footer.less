@@ -1,6 +1,5 @@
 .footer{
     box-sizing: border-box;
-    max-width: 100%;
     background-color: #042C4F;
     display: flex;
     align-items: flex-end;
@@ -9,8 +8,9 @@
 .footer-nav{
     display: flex;
     justify-content: space-between;
-    border: 1px solid red;
     height: 10vh;
+    width: 100%;
+    margin: 0% 10%;
 }
 
 .footer-nav-item{
@@ -24,7 +24,6 @@
 }
 
 .footer-nav img{
-    border: 1px solid red;
     height: 100%;
 }
 
@@ -39,4 +38,22 @@
 
 .footer-nav .muscle-arm{
     font-size: 4rem;
+}
+
+
+@media(max-width: 620px) {
+    .footer-nav{
+        height: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .footer-nav h4{
+        margin: 5%;
+    }
+
+    .disclaimer-container{
+        width: 50%;
+    }
+
 }

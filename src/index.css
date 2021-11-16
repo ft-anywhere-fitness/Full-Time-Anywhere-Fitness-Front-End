@@ -316,9 +316,10 @@ nav {
 .header {
   height: 10vh;
   padding-bottom: 5%;
-  background-color: #042C4F;
   font-family: '' Libre Franklin ', sans-serif';
   box-sizing: border-box;
+  background-color: #042C4F;
+  color: #d1bdbd;
 }
 .header-nav {
   display: flex;
@@ -328,8 +329,8 @@ nav {
   margin-left: 10%;
 }
 .header-nav-item {
-  color: #d1bdbd;
   text-decoration: none;
+  color: #d1bdbd;
 }
 .underline {
   position: relative;
@@ -361,12 +362,8 @@ nav {
     margin-left: 7%;
     text-align: center;
   }
-  footer {
-    display: flex;
-  }
-  .footernav {
-    border: 1px solid red;
-    justify-content: flex-end;
+  .header {
+    height: auto;
   }
   .header-item {
     padding: 1%;
@@ -374,7 +371,6 @@ nav {
 }
 .footer {
   box-sizing: border-box;
-  max-width: 100%;
   background-color: #042C4F;
   display: flex;
   align-items: flex-end;
@@ -382,8 +378,9 @@ nav {
 .footer-nav {
   display: flex;
   justify-content: space-between;
-  border: 1px solid red;
   height: 10vh;
+  width: 100%;
+  margin: 0% 10%;
 }
 .footer-nav-item {
   color: #d1bdbd;
@@ -394,7 +391,6 @@ nav {
   font-size: 0.75rem;
 }
 .footer-nav img {
-  border: 1px solid red;
   height: 100%;
 }
 .footer-links {
@@ -406,4 +402,17 @@ nav {
 }
 .footer-nav .muscle-arm {
   font-size: 4rem;
+}
+@media (max-width: 620px) {
+  .footer-nav {
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .footer-nav h4 {
+    margin: 5%;
+  }
+  .disclaimer-container {
+    width: 50%;
+  }
 }

@@ -2,7 +2,7 @@
 // import AxiosWithAuth from "../utils/axiosWithAuth";
 import React, { useState } from "react";
 import { connect } from "react-redux";
-
+// import {useHistory} from "react-router-dom"
 // Actions
 import { addNewClass } from "../actions/classActions";
 
@@ -22,8 +22,11 @@ const initialValues = {
   classSizeLimit: ""
 };
 
+
+
 function AddClassForm({ addNewClass }) {
   const [classValues, setClassValues] = useState(initialValues);
+  
 
   const handleChange = e => {
     setClassValues({ ...classValues, [e.target.name]: e.target.value });
@@ -41,6 +44,7 @@ function AddClassForm({ addNewClass }) {
     //     .catch(err=> {
     //         console.log(err);
     //     })
+    // push('/classes');
   };
 
   return (

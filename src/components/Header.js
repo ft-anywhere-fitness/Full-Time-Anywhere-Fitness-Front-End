@@ -5,8 +5,8 @@ import SignUpForm from './SignUpForm'
 
 export default function Header(){
     return(
-        <header>
-            <nav>
+        <header className= 'header'>
+            <nav className='headernav'>
                 <h1 className='nav-item'>Anywhere Fitness</h1>
                 <NavLink  className='nav-item underline'  to='/login'>
                     Login

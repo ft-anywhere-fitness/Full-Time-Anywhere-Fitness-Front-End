@@ -12,7 +12,7 @@ export default function Footer(){
     return(
         <footer>
             {/* all the items in the footer will have the classname 'nav-item' */}
-               <nav className='footernav'>
+               <nav>
                 <NavLink  className='nav-item underline'  to='/login'>
                     Login
                 </NavLink>
@@ -21,7 +21,7 @@ export default function Footer(){
                 </NavLink>
                 <a className='nav-item' href= 'https://github.com'>Github</a>
                 <a className = 'nav-item' href=''>Supplements</a>
-                <h6 className='nav-item copyright'>&copy;Lorem Ipsum Industries 2021</h6>
+                <h6 className='nav-item copyright'>&copy;Lorem Ipsum Industries </h6>
 
 
             </nav>

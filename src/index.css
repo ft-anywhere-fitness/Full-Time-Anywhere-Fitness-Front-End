@@ -352,6 +352,11 @@ nav {
     width: 100%;
   }
 }
+@media (max-width: 940px) {
+  .header-nav-item {
+    margin: auto 2%;
+  }
+}
 @media (max-width: 620px) {
   .header-nav {
     display: flex;
@@ -365,7 +370,7 @@ nav {
   .header {
     height: auto;
   }
-  .header-item {
+  .header-nav-item {
     padding: 1%;
   }
 }

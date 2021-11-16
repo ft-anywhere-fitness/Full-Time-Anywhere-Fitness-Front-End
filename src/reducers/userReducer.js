@@ -3,30 +3,22 @@ import { LOGIN, NEW_USER } from "../actions/userActions";
 
 // Initial State
 const initialState = {
-  user: {
-    firstName: "",
-    lastName: "",
-    username: "",
-    password: "",
-    email: "",
-    role: "",
-    user_id: null
-  }
+  firstName: "",
+  lastName: "",
+  username: "",
+  password: "",
+  email: "",
+  role: "",
+  user_id: null
 };
 
 // User Reducer
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN:
-      return {
-        ...state,
-        user: action.payload
-      };
+      return action.payload;
     case NEW_USER:
-      return {
-        ...state,
-        user: action.payload
-      };
+      return action.payload;
     default:
       return state;
   }

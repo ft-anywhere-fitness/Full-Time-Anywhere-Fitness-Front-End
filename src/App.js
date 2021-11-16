@@ -2,6 +2,7 @@
 import React from "react";
 import Landing from "./components/Landing";
 import ClientReviews from "./components/ClientReviews";
+import AddClassForm from "./components/AddClassForm";
 
 // Components
 import Header from "./components/Header";
@@ -10,7 +11,8 @@ import Header from "./components/Header";
 function App() {
   return (
     <div className="app">
-      <Header/>
+      <Header />
+      <AddClassForm />
     </div>
   );
 }

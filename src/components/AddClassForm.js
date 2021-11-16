@@ -1,8 +1,13 @@
-import AxiosWithAuth from "../utils/axiosWithAuth";
+// Libraries
+// import AxiosWithAuth from "../utils/axiosWithAuth";
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import { connect } from "react-redux";
 
-const InitialValues = {
+// Actions
+import { addNewClass } from "../actions/classActions";
+
+const initialValues = {
   name: "",
   type: "",
   startTime: "",
@@ -17,16 +22,17 @@ const InitialValues = {
   classSizeLimit: ""
 };
 
-function AddClassForm() {
-  const [classValues, setClassValues] = useState(InitialValues);
-  const { push } = useHistory();
+function AddClassForm({ addNewClass }) {
+  const [classValues, setClassValues] = useState(initialValues);
+  // const { push } = useHistory();
 
   const handleChange = e => {
     setClassValues({ ...classValues, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = e => {
-    e.PreventDefault();
+    e.preventDefault();
+    addNewClass(classValues);
     // AxiosWithAuth()
     //     .post('/', classValues)
     //     .then(resp=> {
@@ -112,4 +118,4 @@ function AddClassForm() {
   );
 }
 
-export default AddClassForm;
+export default connect(null, { addNewClass })(AddClassForm);

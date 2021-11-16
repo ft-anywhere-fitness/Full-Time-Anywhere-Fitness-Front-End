@@ -8,19 +8,21 @@ export default function Header(){
         <header>
             <nav>
                 <h1 className='header-item'>Anywhere Fitness </h1>
+                <NavLink className='header-item underline' to='/'>
+                   Home Page
+                </NavLink>
                 <NavLink  className='header-item underline'  to='/login'>
                     Login
                 </NavLink>
                 <NavLink className='header-item underline' to='/signup'>
                    Sign Up
                 </NavLink>
+                <NavLink className='header-item underline' to='/classes'>
+                   View Classes
+                </NavLink>
             </nav>
        
 
-            <Routes>
-                <Route path='/login' element={<LoginForm/>}/>
-                <Route path='/signup' element={<SignUpForm/>}/>
-            </Routes>
         </header>
 
     )

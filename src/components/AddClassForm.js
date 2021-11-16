@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 // import {useHistory} from "react-router-dom"
 // Actions
 import { addNewClass } from "../actions/classActions";
+import { useNavigate } from "react-router-dom";
 
 // Initial State (this is subject to change)
 const initialValues = {
@@ -26,7 +27,7 @@ const initialValues = {
 
 function AddClassForm({ addNewClass }) {
   const [classValues, setClassValues] = useState(initialValues);
-  
+  let navigate = useNavigate();
 
   const handleChange = e => {
     setClassValues({ ...classValues, [e.target.name]: e.target.value });
@@ -45,6 +46,7 @@ function AddClassForm({ addNewClass }) {
     //         console.log(err);
     //     })
     // push('/classes');
+    navigate('/classes')
   };
 
   return (

@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <AddClassForm />
+      
 
       <Routes>
         <Route exact path="/" element={<Landing />}/>
@@ -26,6 +26,7 @@ function App() {
         <Route path="/classes" element={<Classes />}/>
       </Routes>
        {/*<Route path="/logout" element={<Logout/>}/>}*/}
+       {/*<Route path=`/edit/${id}` element={<EditClassForm/>}/>}*/}
     </div>
   );
 }

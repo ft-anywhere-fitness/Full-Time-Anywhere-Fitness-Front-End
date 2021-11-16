@@ -12,9 +12,16 @@ export default function Footer(){
         <footer className='footer'>
             {/* all the items in the footer will have the classname 'nav-item' */}
             <nav className='footer-nav'>
+                <h4 class='muscle-arm'>💪</h4>
+                <div className='footer-links'>
                 <a className='footer-nav-item' href= 'https://github.com'>Github</a>
                 <a className = 'footer-nav-item' href=''>Supplements</a>
+                <a className='footer-nav-item' href=''>Source Code</a>
+                </div>
                 <h6 className='footer-nav-item copyright'>&copy;Lorem Ipsum Industries </h6>
+                <div className='disclaimer-container footer-nav-item'>
+                <p>Disclaimer: This is not a real website and we do not have real classes. </p>
+                </div>
             </nav>
         </footer>
     )

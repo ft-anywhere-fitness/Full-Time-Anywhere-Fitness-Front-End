@@ -1,6 +1,5 @@
 // Libraries
 import React from "react";
-import ClientReviews from "./components/ClientReviews";
 
 // Components
 // import LoginForm from "./components/LoginForm";
@@ -11,7 +10,6 @@ function App() {
   return (
     <div className="app">
       <SignUpForm />
-      <ClientReviews />
     </div>
   );
 }

@@ -6,21 +6,27 @@
 
 2. While in the root directory of the project, run `npm install` to install all of the project dependencies.
 
-3. Run `npm start` to start up the app.
-
-4. Before merging a branch, run `git pull origin main` to stay up to date with `main`.
-
-5. When you pull from `main`, be sure to run `npm install` to update your dependencies.
+3. Run `npm start` to run the app.
 
 ## Git Flow
 
-- For this project, please read and follow [this guide](https://www.notion.so/Git-for-Build-Sprint-20ce2d09dc0e47b1af5d51821b54b810) that was provided by Edd Burke.
+- For using Git and GitHub on this project, **please read and follow [this guide](https://www.notion.so/Git-for-Build-Sprint-20ce2d09dc0e47b1af5d51821b54b810)** that was provided by Edd Burke.
 
 - Make sure to **not** work directly on `main`. Always create a feature branch with an appropriate name.
 
 - Post in Slack ahead of time what feature you will be working on in the app, so that people don't accidentally work on the same feature. Communication is key!
 
-- Please post every pull requests you make into the Slack channel when it is ready for review. This step is essential to keep us all on the same page. Every pull request needs at least one review before it can be merged (this should prevent merge conflicts from happening).
+- Create branches using **meaningful** names. Along with this, don't make merge requests for branches that don't do much
+
+- Document the changes you make on your branch into their pull request description so that other developers can know what changes have been made without having to read through the file changes
+
+- Whenever a new branch is merged with main, run `git pull origin main` to stay up to date with `main`.
+
+- When you pull from main and a new dependency has been added to the project, be sure to run `npm install` to update your dependencies and install the new dependencies.
+
+- Please post every pull requests you make into the Slack channel when it is ready for review. This step is essential to keep us all on the same page. Every pull request needs at least **one review** before it can be merged (this should prevent merge conflicts from happening).
+
+- **DO NOT SKIMP OUT ON REVIEWING PULL REQUESTS**
 
 ## Flowchart of App State
 

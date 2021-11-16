@@ -374,6 +374,7 @@ nav {
   background-color: #042C4F;
   display: flex;
   align-items: flex-end;
+  flex-wrap: wrap;
 }
 .footer-nav {
   display: flex;
@@ -411,8 +412,5 @@ nav {
   }
   .footer-nav h4 {
     margin: 5%;
-  }
-  .disclaimer-container {
-    width: 50%;
   }
 }

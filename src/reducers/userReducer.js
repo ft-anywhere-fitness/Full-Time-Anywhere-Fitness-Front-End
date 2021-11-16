@@ -1,5 +1,5 @@
 // Constants
-import { LOGIN, NEW_USER } from "../actions/userAction";
+import { LOGIN, NEW_USER } from "../actions/userActions";
 
 // Initial State
 const initialState = {

@@ -313,24 +313,23 @@ nav {
   display: flex;
   align-items: center;
 }
-* {
-  box-sizing: border-box;
-  text-decoration: none;
-  background-color: #042C4F;
-}
-header {
+.header {
   height: 10vh;
   padding-bottom: 5%;
+  background-color: #042C4F;
+  font-family: '' Libre Franklin ', sans-serif';
+  box-sizing: border-box;
 }
-nav {
+.header-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-right: 30%;
   margin-left: 10%;
 }
-.nav-item {
+.header-nav-item {
   color: #d1bdbd;
+  text-decoration: none;
 }
 .underline {
   position: relative;
@@ -361,6 +360,13 @@ nav {
     margin-right: 7%;
     margin-left: 7%;
     text-align: center;
+  }
+  footer {
+    display: flex;
+  }
+  .footernav {
+    border: 1px solid red;
+    justify-content: flex-end;
   }
   .header-item {
     padding: 1%;

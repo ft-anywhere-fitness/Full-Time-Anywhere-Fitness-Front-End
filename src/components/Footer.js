@@ -19,7 +19,6 @@ export default function Footer(){
                     <a className='footer-nav-item' href=''>Source Code</a>
                 </div>
                 <h6 className='footer-nav-item copyright'>&copy;Lorem Ipsum Industries </h6>
-                
                 <div className='disclaimer-container footer-nav-item'>
                 <p>Disclaimer: This is not a real website and we do not have real classes. </p>
                 </div>

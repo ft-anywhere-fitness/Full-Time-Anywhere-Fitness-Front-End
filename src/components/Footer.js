@@ -1,5 +1,4 @@
 import React from 'react'
-import { Routes, Route, NavLink } from 'react-router-dom';
 import Header from './Header';
 import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm'
@@ -10,27 +9,13 @@ import SignUpForm from './SignUpForm'
 
 export default function Footer(){
     return(
-        <footer>
+        <footer className='footer'>
             {/* all the items in the footer will have the classname 'nav-item' */}
-               <nav>
-                <NavLink  className='nav-item underline'  to='/login'>
-                    Login
-                </NavLink>
-                <NavLink className='nav-item underline' to='/signup'>
-                   Sign Up
-                </NavLink>
-                <a className='nav-item' href= 'https://github.com'>Github</a>
-                <a className = 'nav-item' href=''>Supplements</a>
-                <h6 className='nav-item copyright'>&copy;Lorem Ipsum Industries </h6>
-
-
+            <nav className='footer-nav'>
+                <a className='footer-nav-item' href= 'https://github.com'>Github</a>
+                <a className = 'footer-nav-item' href=''>Supplements</a>
+                <h6 className='footer-nav-item copyright'>&copy;Lorem Ipsum Industries </h6>
             </nav>
-       
-
-            <Routes>
-                <Route path='/login' element={<LoginForm/>}/>
-                <Route path='/signup' element={<SignUpForm/>}/>
-            </Routes>
         </footer>
     )
 }

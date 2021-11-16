@@ -5,12 +5,13 @@ import { connect } from 'react-redux';
 // Components
 import Class from "./Class";
 
-const Classes = ({ classes }) => {
+const Classes = (props) => {
+  const { classes } = props;
   return (
     <div>
       {classes.map((session) => {
         return (
-          <Class key={session.id} props={session} />
+          <Class key={session.class_id} session={session} />
         );
       })}
     </div>

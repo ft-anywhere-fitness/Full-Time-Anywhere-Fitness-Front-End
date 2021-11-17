@@ -17,7 +17,6 @@ function App() {
   return (
     <div className="app">
       <Header/>
-      <Footer/>
       <Routes>
         <Route exact path="/" element={<Landing />}/>
         <Route path="/login" element={<LoginForm />}/>
@@ -25,6 +24,7 @@ function App() {
         <Route path="/addclass" element={<AddClassForm/>}/>
         <Route path="/classes" element={<Classes />}/>
       </Routes>
+      <Footer/>
     </div>
   );
 }

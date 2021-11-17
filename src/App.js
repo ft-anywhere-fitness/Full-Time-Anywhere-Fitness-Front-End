@@ -18,6 +18,13 @@ function App() {
     <div className="app">
       <Header/>
       <Footer/>
+      <Routes>
+        <Route exact path="/" element={<Landing />}/>
+        <Route path="/login" element={<LoginForm />}/>
+        <Route path="/signup" element={<SignUpForm />}/>
+        <Route path="/addclass" element={<AddClassForm/>}/>
+        <Route path="/classes" element={<Classes />}/>
+      </Routes>
     </div>
   );
 }

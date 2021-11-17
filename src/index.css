@@ -420,3 +420,30 @@ nav {
     margin: 5%;
   }
 }
+.class-container {
+  border: 1px solid red;
+  display: flex;
+}
+.class-container:hover {
+  font-size: 1.15rem;
+}
+.class-container:hover h3 {
+  text-decoration: underline;
+  transition: 0.3s;
+}
+.info-container {
+  width: 50%;
+  border: 1px solid red;
+}
+.img-container {
+  width: 50%;
+}
+.class-location-times {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  width: 50%;
+}
+.class-location-times p {
+  margin: 1% auto;
+}

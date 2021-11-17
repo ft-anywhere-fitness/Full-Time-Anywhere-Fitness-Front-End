@@ -14,18 +14,36 @@ const Class = (props) => {
     classSizeLimit
   } = session;
 
+  // const timeEmoji = time =>{
+  //   let timeString = time.slice(0,3);
+  //   return timeString;
+  // }
+
+
   return (
+
     <div className ='class-container'>
-      <h3>Welcome to {name}</h3>
-      <div>
-        <p>This is a {type} class.</p>
-        <p>Class will take place in {location}</p>
-        <p>Class starts at {startTime}</p>
-        <p>Class will last for {duration.hours} hours and {duration.minutes} minutes</p>
-        <p>Expected Intensity: {intensityLevel}</p>
-        <p>Attendees: {currentlyEnrolled}</p>
-        <p>Max Attendees: {classSizeLimit}</p>
-      </div>
+     <section className= 'info-container'>
+        <h3 className='class-name-container'>{name}</h3>
+        <div className = 'class-details-container'>
+          <p className= 'class-info-item'>This is a class in {type}.</p>
+          <div className='class-location-times'>
+            <p className= 'class-info-item'>{location} U+FE0F</p>
+            <p className= 'class-info-item'>Class starts at {startTime}</p>
+            <p className= 'class-info-item'>Class will last for {duration.hours} hours and {duration.minutes} minutes</p>
+          </div>
+      
+
+
+
+          <p className= 'class-info-item'>Expected Intensity: {intensityLevel}</p>
+          <p className= 'class-info-item'>Attendees: {currentlyEnrolled}</p>
+          <p className= 'class-info-item'>Max Attendees: {classSizeLimit}</p>
+        </div>
+      </section>
+      <section className='img-container'>
+        fjadkofas
+      </section>
     </div>
   );
 };

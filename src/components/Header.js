@@ -1,9 +1,8 @@
+// Libraries
 import React from 'react'
-import { Routes, Route, NavLink } from 'react-router-dom';
-import LoginForm from './LoginForm';
-import SignUpForm from './SignUpForm'
+import { NavLink } from 'react-router-dom';
 
-export default function Header(){
+export default function Header() {
     return(
         <header className='header'>
             <nav className='header-nav'>
@@ -22,12 +21,5 @@ export default function Header(){
                 </NavLink>
             </nav>
         </header>
-
     )
-}
-
-// NavLink to = '/signup'
-
-// <NavLink classname = 'djfsioadf' to='/signup'>To: Login<NavLink/>
-
-//source code, disclaimer
+};

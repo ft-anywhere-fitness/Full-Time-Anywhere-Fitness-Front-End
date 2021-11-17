@@ -381,6 +381,7 @@ nav {
   align-items: flex-end;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 3%;
 }
 .footer-nav {
   display: flex;
@@ -397,9 +398,7 @@ nav {
   width: 20%;
   font-size: 0.65rem;
   color: rgba(209, 189, 189, 0.842);
-}
-.footer-nav img {
-  height: 100%;
+  text-align: center;
 }
 .footer-links {
   display: flex;
@@ -408,7 +407,7 @@ nav {
 .footer-links a {
   margin: 3% 0;
 }
-.footer-nav .muscle-arm {
+.footer-muscle-arm {
   font-size: 4rem;
 }
 @media (max-width: 620px) {

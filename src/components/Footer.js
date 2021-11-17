@@ -12,7 +12,7 @@ export default function Footer(){
         <footer className='footer'>
             {/* all the items in the footer will have the classname 'nav-item' */}
             <nav className='footer-nav'>
-                <h4 class='muscle-arm'>💪</h4>
+                <h4 class='footer-muscle-arm'>💪</h4>
                 <div className='footer-links'>
                     <a target="_blank" className='footer-nav-item' href= 'https://github.com'>Github</a>
                     <a target="_blank" className = 'footer-nav-item' href=''>Supplements</a>

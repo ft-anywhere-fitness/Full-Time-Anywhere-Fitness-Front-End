@@ -18,13 +18,20 @@
     border: 1px solid red;
 }
 
+.class-name-container, .class-type{
+text-align: center;
+}
+
 .img-container{
     width: 50%;
 }
 
 .class-details-container{
     display: flex;
+}
 
+.class-bold{
+    text-emphasis: bold;
 }
 
 .class-location-times, .intensity-attendees-container{
@@ -38,4 +45,19 @@
 .class-location-times p, .intensity-attendees-container p{
     margin: 1.25% 0.75%;
     padding: 0.75%;
+}
+
+.class-bold{
+    font-weight: bold;
+}
+
+@media(max-width: 620px) {
+    .class-details-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .class-location-times, .intensity-attendees-container{
+        width: 100%;
+    }
 }

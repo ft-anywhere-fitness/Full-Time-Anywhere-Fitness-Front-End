@@ -14,17 +14,16 @@ export default function Footer(){
             <nav className='footer-nav'>
                 <h4 class='muscle-arm'>💪</h4>
                 <div className='footer-links'>
-                    <a className='footer-nav-item' href= 'https://github.com'>Github</a>
-                    <a className = 'footer-nav-item' href=''>Supplements</a>
-                    <a className='footer-nav-item' href=''>Source Code</a>
+                    <a target="_blank" className='footer-nav-item' href= 'https://github.com'>Github</a>
+                    <a target="_blank" className = 'footer-nav-item' href=''>Supplements</a>
+                    <a target="_blank" className='footer-nav-item' href=''>Source Code</a>
                 </div>
                 <h6 className='footer-nav-item copyright'>&copy;Lorem Ipsum Industries </h6>
-
-                {/* //I really want to make the disclaimer its own line in the footer, but can't quite figure out how to do that */}
-                <div className='disclaimer-container footer-nav-item'>
+            </nav>
+                    {/* The disclaimer is below the rest of the footer */}
+                     <div className='disclaimer-container footer-nav-item'>
                     <p>Disclaimer: This is not a real website and we do not have real classes. </p>
                 </div>
-            </nav>
         </footer>
     )
 }

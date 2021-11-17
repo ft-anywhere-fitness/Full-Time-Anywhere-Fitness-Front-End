@@ -380,6 +380,7 @@ nav {
   display: flex;
   align-items: flex-end;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .footer-nav {
   display: flex;
@@ -393,8 +394,9 @@ nav {
   text-decoration: none;
 }
 .disclaimer-container {
-  width: 15%;
-  font-size: 0.75rem;
+  width: 20%;
+  font-size: 0.65rem;
+  color: rgba(209, 189, 189, 0.842);
 }
 .footer-nav img {
   height: 100%;

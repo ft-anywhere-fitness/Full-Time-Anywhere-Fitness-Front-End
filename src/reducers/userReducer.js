@@ -3,13 +3,11 @@ import { LOGIN, NEW_USER } from "../actions/userActions";
 
 // Initial State
 const initialState = {
-  firstName: "",
-  lastName: "",
-  username: "",
-  password: "",
-  email: "",
-  role: "",
-  user_id: null
+  "user_id": null,
+  "username": "",
+  "password": "",
+  "email": "",
+  "role_name": ""
 };
 
 // User Reducer

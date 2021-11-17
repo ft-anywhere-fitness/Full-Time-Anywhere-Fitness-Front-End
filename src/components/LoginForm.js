@@ -3,18 +3,13 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 
 // Actions
-import { login } from "../actions/userActions";
+import { login, postLogin } from "../actions/userActions";
 
-const LoginForm = ({ login }) => {
+const LoginForm = ({ login, postLogin }) => {
   // State Management
   const [credentials, setCredentials] = useState({
-    firstName: "",
-    lastName: "",
-    username: "",
-    password: "",
-    email: "",
-    role: "",
-    user_id: null
+    "username": "",
+    "password": ""
   });
 
   // Event Handlers
@@ -27,7 +22,7 @@ const LoginForm = ({ login }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    login(credentials);
+    postLogin(credentials);
   };
 
   // Returned Component
@@ -58,8 +53,5 @@ const LoginForm = ({ login }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return { user: state.user };
-};
 
-export default connect(mapStateToProps, { login })(LoginForm);
+export default connect(null, { login, postLogin })(LoginForm);

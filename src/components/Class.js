@@ -19,6 +19,7 @@ const Class = (props) => {
   //   return timeString;
   // }
 
+  //isFull() checks if the class is full, and returns a message saying it's full if so.
   const isFull= () =>{
     if(currentlyEnrolled >= classSizeLimit){
       return (
@@ -41,20 +42,18 @@ const Class = (props) => {
           </div>
 
           <div className='intensity-attendees-container'>
-            <p className= 'class-info-item'>Expected Intensity: {intensityLevel}</p>
+            <p className= 'class-info-item'>Expected Intensity: <span className='class-bold'>{intensityLevel}</span></p>
             <p className= 'class-info-item'>Attendees: {currentlyEnrolled}</p>
             <p className= 'class-info-item'>Max Attendees: {classSizeLimit}</p>
-            {isFull()}
+            {isFull()} 
+            {/* if the class is full, this message will say so */}
           </div>
         </div>
       </section>
       <section className='img-container'>
-        IMAGE GOES HERE
       </section>
     </div>
   );
 };
 
 export default Class;
-
-<span className='class-bold'></span>

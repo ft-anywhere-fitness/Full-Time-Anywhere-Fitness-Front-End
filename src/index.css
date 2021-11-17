@@ -464,7 +464,26 @@ nav {
 .class-bold {
   font-weight: bold;
 }
+.img-container {
+  background-color: red;
+  background-size: 1000px;
+  background-repeat: repeat-x;
+  background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/Men-Fitness-Wallpaper-1.jpg');
+  background-position: center;
+  color: #ffffff;
+}
 @media (max-width: 620px) {
+  .class-container {
+    background-color: red;
+    background-size: 1000px;
+    background-repeat: repeat-x;
+    background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/Men-Fitness-Wallpaper-1.jpg');
+    background-position: center;
+    color: #ffffff;
+  }
+  .info-container h3 {
+    background-color: black;
+  }
   .class-details-container {
     display: flex;
     flex-direction: column;
@@ -472,5 +491,16 @@ nav {
   .class-location-times,
   .intensity-attendees-container {
     width: 100%;
+  }
+  .img-container {
+    display: none;
+  }
+  .info-container {
+    width: 100%;
+    text-align: center;
+  }
+  .class-location-times,
+  .intensity-attendees-container {
+    border: none;
   }
 }

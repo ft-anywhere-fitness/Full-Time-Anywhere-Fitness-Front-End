@@ -2,6 +2,7 @@
 import React from "react";
 import Landing from "./components/Landing";
 import ClientReviews from "./components/ClientReviews";
+import Footer from "./components/Footer";
 
 // Components
 import Header from "./components/Header";
@@ -15,9 +16,8 @@ import SignUpForm from "./components/SignUpForm";
 function App() {
   return (
     <div className="app">
-      <Header />
-      
-
+      <Header/>
+      <Footer/>
       <Routes>
         <Route exact path="/" element={<Landing />}/>
         <Route path="/login" element={<LoginForm />}/>
@@ -25,8 +25,6 @@ function App() {
         <Route path="/addclass" element={<AddClassForm/>}/>
         <Route path="/classes" element={<Classes />}/>
       </Routes>
-       {/*<Route path="/logout" element={<Logout/>}/>}*/}
-       {/*<Route path=`/edit/${id}` element={<EditClassForm/>}/>}*/}
     </div>
   );
 }

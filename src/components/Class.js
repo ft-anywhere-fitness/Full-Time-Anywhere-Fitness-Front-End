@@ -28,6 +28,15 @@ const Class = (props) => {
     }
   }
 
+  const singularHour = () =>{
+    if (duration.hours=== '1'){
+      return `${duration.hours} hour`
+    }
+    else{
+      return `${duration.hours} hours`
+    }
+  }
+
   return (
 
     <div className ='class-container'>
@@ -38,7 +47,7 @@ const Class = (props) => {
           <div className='class-location-times'>
             <p className= 'class-info-item'>{location} </p>
             <p className= 'class-info-item'>Class starts at <span className='class-bold'>{startTime}</span></p>
-            <p className= 'class-info-item'>Duration: <span className='class-bold'>{duration.hours} hours {duration.minutes} minutes</span></p>
+            <p className= 'class-info-item'>Duration: <span className='class-bold'>{singularHour()} {duration.minutes} minutes</span></p>
           </div>
 
           <div className='intensity-attendees-container'>

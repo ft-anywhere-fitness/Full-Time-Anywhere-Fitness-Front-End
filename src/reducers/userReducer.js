@@ -1,21 +1,20 @@
 // Constants
-import { LOGIN, NEW_USER } from "../actions/userActions";
+import { SUCCESSFUL_LOGIN, SUCCESSFUL_REGISTER } from "../actions/userActions";
 
 // Initial State
 const initialState = {
-  "user_id": null,
   "username": "",
   "password": "",
   "email": "",
-  "role_name": ""
+  "role_id": null
 };
 
 // User Reducer
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN:
+    case SUCCESSFUL_LOGIN:
       return action.payload;
-    case NEW_USER:
+    case SUCCESSFUL_REGISTER:
       return action.payload;
     default:
       return state;

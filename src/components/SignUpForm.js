@@ -3,18 +3,15 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 
 // Action
-import { newUser } from "../actions/userActions";
+import { register } from "../actions/userActions";
 
-const SignUpForm = ({ newUser }) => {
+const SignUpForm = ({ register }) => {
   // State Management
   const [credentials, setCredentials] = useState({
-    firstName: "",
-    lastName: "",
-    username: "",
-    password: "",
-    email: "",
-    role: "",
-    user_id: null
+    "username": "",
+    "password": "",
+    "email": "",
+    "role_id": null
   });
 
   // Event Handlers
@@ -27,30 +24,20 @@ const SignUpForm = ({ newUser }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    newUser(credentials);
+    register(credentials);
   };
 
   // Returned Component
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        First Name:
+        Username:
         <input
-          name="firstName"
+          name="username"
           type="text"
-          placeholder="First"
+          placeholder="Username"
           onChange={handleChange}
-          value={credentials.firstName}
-        />
-      </label>
-      <label>
-        Last Name:
-        <input
-          name="lastName"
-          type="text"
-          placeholder="Last"
-          onChange={handleChange}
-          value={credentials.lastName}
+          value={credentials.username}
         />
       </label>
       <label>
@@ -61,16 +48,6 @@ const SignUpForm = ({ newUser }) => {
           placeholder="example@something.com"
           onChange={handleChange}
           value={credentials.email}
-        />
-      </label>
-      <label>
-        Username:
-        <input
-          name="username"
-          type="text"
-          placeholder="Username"
-          onChange={handleChange}
-          value={credentials.username}
         />
       </label>
       <label>
@@ -90,7 +67,7 @@ const SignUpForm = ({ newUser }) => {
           name="role"
           type="radio"
           onChange={handleChange}
-          value="Instructor"
+          value="2"
         />
       </label>
       <br />
@@ -100,7 +77,7 @@ const SignUpForm = ({ newUser }) => {
           name="role"
           type="radio"
           onChange={handleChange}
-          value="Client"
+          value="1"
         />
       </label>
       <br />
@@ -109,8 +86,4 @@ const SignUpForm = ({ newUser }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return { user: state.user };
-};
-
-export default connect(mapStateToProps, { newUser })(SignUpForm);
+export default connect(null, { register })(SignUpForm);

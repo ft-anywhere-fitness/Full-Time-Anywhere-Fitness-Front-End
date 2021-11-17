@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 
 // Actions
-import { login, postLogin } from "../actions/userActions";
+import { login } from "../actions/userActions";
 
-const LoginForm = ({ login, postLogin }) => {
+const LoginForm = ({ login }) => {
   // State Management
   const [credentials, setCredentials] = useState({
     "username": "",
@@ -22,7 +22,7 @@ const LoginForm = ({ login, postLogin }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    postLogin(credentials);
+    login(credentials);
   };
 
   // Returned Component
@@ -54,4 +54,4 @@ const LoginForm = ({ login, postLogin }) => {
 };
 
 
-export default connect(null, { login, postLogin })(LoginForm);
+export default connect(null, { login })(LoginForm);

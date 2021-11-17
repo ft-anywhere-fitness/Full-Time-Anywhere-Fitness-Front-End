@@ -15,7 +15,7 @@ const Class = (props) => {
   } = session;
 
   return (
-    <div>
+    <div className ='class-container'>
       <h3>Welcome to {name}</h3>
       <div>
         <p>This is a {type} class.</p>

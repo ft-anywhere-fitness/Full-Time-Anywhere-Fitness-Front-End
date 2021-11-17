@@ -420,3 +420,50 @@ nav {
     margin: 5%;
   }
 }
+.top-sect {
+  max-width: 100%;
+}
+.top-sect img {
+  width: 60%;
+  margin: 0% 20% 0%;
+  padding: 5% 0;
+  height: 90vh;
+}
+.sect {
+  display: flex;
+  max-width: 100%;
+  margin-bottom: 3%;
+}
+.sect .img {
+  width: 70%;
+}
+.sect .img img {
+  border-radius: 999px;
+  width: 90%;
+  height: 60vh;
+}
+.second-sect {
+  display: flex;
+  max-width: 100%;
+  margin-bottom: 3%;
+}
+.second-sect .img {
+  width: 70%;
+}
+.second-sect .img img {
+  border-radius: 999px;
+  width: 70%;
+  margin-left: 10%;
+  height: 70vh;
+}
+.paragraph {
+  width: 40%;
+  margin-top: 6%;
+}
+.paragraph h2 {
+  font-size: 2.5rem;
+}
+.paragraph p {
+  font-size: 2rem;
+  color: #FAF9F6;
+}

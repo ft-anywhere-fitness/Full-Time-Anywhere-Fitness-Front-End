@@ -20,14 +20,14 @@ export default function Landing() {
                 </div>
                 <div className = "paragraph">
                     <h2>Monster Strength</h2>
-                    <p>Here at anywhere fitness you can build superhuman strength and if you lift here long enough you can even lift car's!</p>
+                    <p>Here at Anywhere Fitness you can build superhuman strength and if you lift here long enough you can even lift car's!</p>
                 </div>
             </div>
 
             <div className = "second-sect">
                 <div className = "paragraph">
                     <h2>Godlike Physique</h2>
-                    <p>Work out at anywhere fitness to attain a physique even the god's would envy! Who doesn't love post workout selfies? With our top of the line mirrors the perfect selfy is one click away.</p>
+                    <p>Work out at Anywhere Fitness to attain a physique even the god's would envy! Who doesn't love post workout selfies? With our top of the line mirrors the perfect selfy is one click away.</p>
                 </div>
                 <div className = "img">
                     <img src = {abs2} alt = "Person Posing"/>

@@ -11,6 +11,8 @@ import { Route, Routes } from "react-router-dom";
 import Classes from "./components/Classes"
 import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
+import Logout from "./components/Logout";
+import EditClassForm from "./components/EditClassForm";
 
 // Returned Component
 function App() {
@@ -22,8 +24,10 @@ function App() {
         <Route exact path="/" element={<Landing />}/>
         <Route path="/login" element={<LoginForm />}/>
         <Route path="/signup" element={<SignUpForm />}/>
-        <Route path="/addclass" element={<AddClassForm/>}/>
+        <Route path="/classes/add" element={<AddClassForm/>}/>
         <Route path="/classes" element={<Classes />}/>
+        <Route path="/classes/class/edit/:id" element={<EditClassForm />}/>
+        <Route path="/logout" element={<Logout />}/>
       </Routes>
     </div>
   );

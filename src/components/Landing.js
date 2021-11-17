@@ -10,11 +10,11 @@ export default function Landing() {
     return(
 
         <div className = "quickLooks">
-            <div className = "top section">
+            <div className = "top-sect">
                 <img src = {theRockWithquotes} alt = "The Rock"/>
             </div>
 
-            <div className = "first section">
+            <div className = "first sect">
                 <div className = "img">
                     <img src = {squats} alt = "Person Squatting"/>
                 </div>
@@ -24,17 +24,17 @@ export default function Landing() {
                 </div>
             </div>
 
-            <div className = "second section">
+            <div className = "second-sect">
                 <div className = "paragraph">
-                    <p>Work out at anywhere fitness to attain a physique even the god's would envy! Who doesn't love post workout selfies? With our top of the line mirrors the perfect selfy is one click away.</p>
                     <h2>Godlike Physique</h2>
+                    <p>Work out at anywhere fitness to attain a physique even the god's would envy! Who doesn't love post workout selfies? With our top of the line mirrors the perfect selfy is one click away.</p>
                 </div>
                 <div className = "img">
                     <img src = {abs2} alt = "Person Posing"/>
                 </div>
             </div>
 
-            <div className = "third section">
+            <div className = "third sect">
                 <div className = "img">
                     <img src = {legs} alt = "Person using the leg curl machine."/>
                 </div>

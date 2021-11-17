@@ -1,10 +1,9 @@
 .class-container{
-    border: 1px solid red;
+    border: 1px solid red; //I just think it looks nicer with the border
     display: flex;
 }
 
-
-
+//Making the class stand out a bit when you hover over it
 .class-container:hover{
     font-size: 1.15rem;
     h3{
@@ -13,27 +12,22 @@
     }
 }
 
-.info-container{
+//making these sit next to each other on the page
+.info-container, .img-container{
     width: 50%;
     border: 1px solid red;
 }
 
+//These are a header of sorts so I want them in the center
 .class-name-container, .class-type{
 text-align: center;
-}
-
-.img-container{
-    width: 50%;
 }
 
 .class-details-container{
     display: flex;
 }
 
-.class-bold{
-    text-emphasis: bold;
-}
-
+//Looked better in my opinion to have two columns of information. They have a border delineating them from each other.
 .class-location-times, .intensity-attendees-container{
     display: flex;
     flex-direction: column;
@@ -42,17 +36,19 @@ text-align: center;
     justify-content: space-between;
 }
 
+//giving each paragraph a little breathing room
 .class-location-times p, .intensity-attendees-container p{
     margin: 1.25% 0.75%;
     padding: 0.75%;
 }
 
+//this is for all the important details, seems helpful to bold them
 .class-bold{
     font-weight: bold;
 }
 
+//styling the image portion to make it fit in the container how I want it
 .img-container{
-    background-color: red;
     background-size: 1000px;
     background-repeat: repeat-x;
     background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/Men-Fitness-Wallpaper-1.jpg');
@@ -60,6 +56,8 @@ text-align: center;
     color: rgb(255, 255, 255);
 }
 
+
+//touching up some stuff that looked wonky at this screen size, giving items more breathing room
 @media(max-width: 950px) and (min-width: 620px){
     .class-location-times, .intensity-attendees-container{
         border: none;
@@ -85,6 +83,7 @@ text-align: center;
     }
 
     .info-container h3{
+        //This was hard to read with where it was against the image, so I gave it a black background for readability
         background-color: black;
     }
 

@@ -431,7 +431,8 @@ nav {
   text-decoration: underline;
   transition: 0.3s;
 }
-.info-container {
+.info-container,
+.img-container {
   width: 50%;
   border: 1px solid red;
 }
@@ -439,14 +440,8 @@ nav {
 .class-type {
   text-align: center;
 }
-.img-container {
-  width: 50%;
-}
 .class-details-container {
   display: flex;
-}
-.class-bold {
-  text-emphasis: bold;
 }
 .class-location-times,
 .intensity-attendees-container {
@@ -465,7 +460,6 @@ nav {
   font-weight: bold;
 }
 .img-container {
-  background-color: red;
   background-size: 1000px;
   background-repeat: repeat-x;
   background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/Men-Fitness-Wallpaper-1.jpg');

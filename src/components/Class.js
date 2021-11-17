@@ -25,24 +25,23 @@ const Class = (props) => {
     <div className ='class-container'>
      <section className= 'info-container'>
         <h3 className='class-name-container'>{name}</h3>
+        <p className= 'class-info-item'>This is a class in {type}.</p>
         <div className = 'class-details-container'>
-          <p className= 'class-info-item'>This is a class in {type}.</p>
           <div className='class-location-times'>
-            <p className= 'class-info-item'>{location} U+FE0F</p>
+            <p className= 'class-info-item'>{location} </p>
             <p className= 'class-info-item'>Class starts at {startTime}</p>
-            <p className= 'class-info-item'>Class will last for {duration.hours} hours and {duration.minutes} minutes</p>
+            <p className= 'class-info-item'>Duration: {duration.hours} hours {duration.minutes} minutes</p>
           </div>
-      
 
-
-
-          <p className= 'class-info-item'>Expected Intensity: {intensityLevel}</p>
-          <p className= 'class-info-item'>Attendees: {currentlyEnrolled}</p>
-          <p className= 'class-info-item'>Max Attendees: {classSizeLimit}</p>
+          <div className='intensity-attendees-container'>
+            <p className= 'class-info-item'>Expected Intensity: {intensityLevel}</p>
+            <p className= 'class-info-item'>Attendees: {currentlyEnrolled}</p>
+            <p className= 'class-info-item'>Max Attendees: {classSizeLimit}</p>
+          </div>
         </div>
       </section>
       <section className='img-container'>
-        fjadkofas
+        IMAGE GOES HERE
       </section>
     </div>
   );

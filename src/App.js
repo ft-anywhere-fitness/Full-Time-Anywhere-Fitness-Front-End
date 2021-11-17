@@ -24,9 +24,9 @@ function App() {
         <Route exact path="/" element={<Landing />}/>
         <Route path="/login" element={<LoginForm />}/>
         <Route path="/signup" element={<SignUpForm />}/>
-        <Route path="/add_class" element={<AddClassForm/>}/>
+        <Route path="/classes/add" element={<AddClassForm/>}/>
         <Route path="/classes" element={<Classes />}/>
-        <Route path="/edit_class/:id" element={<EditClassForm />}/>
+        <Route path="/classes/class/edit/:id" element={<EditClassForm />}/>
         <Route path="/logout" element={<Logout />}/>
       </Routes>
     </div>

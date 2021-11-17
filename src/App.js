@@ -19,7 +19,6 @@ function App() {
   return (
     <div className="app">
       <Header/>
-      <Footer/>
       <Routes>
         <Route exact path="/" element={<Landing />}/>
         <Route path="/login" element={<LoginForm />}/>
@@ -29,6 +28,7 @@ function App() {
         <Route path="/classes/class/edit/:id" element={<EditClassForm />}/>
         <Route path="/logout" element={<Logout />}/>
       </Routes>
+      <Footer/>
     </div>
   );
 }

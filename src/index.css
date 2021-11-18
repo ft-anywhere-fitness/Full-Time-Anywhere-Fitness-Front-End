@@ -476,6 +476,23 @@ nav {
   font-size: 2rem;
   color: #FAF9F6;
 }
+@media (max-width: 1200px) {
+  .top-sect img {
+    height: auto;
+  }
+  .sect .img img {
+    height: auto;
+  }
+  .second-sect .img img {
+    height: auto;
+  }
+  .paragraph h2 {
+    font-size: 100%;
+  }
+  .paragraph p {
+    font-size: 100%;
+  }
+}
 .class-container {
   border: 1px solid red;
   display: flex;
@@ -566,21 +583,4 @@ nav {
   .intensity-attendees-container {
     border: none;
   }
-@media (max-width: 1200px) {
-  .top-sect img {
-    height: auto;
-  }
-  .sect .img img {
-    height: auto;
-  }
-  .second-sect .img img {
-    height: auto;
-  }
-  .paragraph h2 {
-    font-size: 100%;
-  }
-  .paragraph p {
-    font-size: 100%;
-  }
-}
 }

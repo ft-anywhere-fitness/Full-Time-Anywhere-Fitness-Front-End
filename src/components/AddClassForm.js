@@ -55,78 +55,80 @@ function AddClassForm({ addNewClass }) {
   return (
     <div className= 'addclasscontainer'>
       <section className= 'addclassform'>
-      <h1 className= 'addclassh1'>Add a class</h1>
+        <h1 className= 'addclassh1'>Add a class</h1>
 
-      <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <input className= 'form-item'
-          id="name"
-          name="name"
-          value={classValues.name}
-          onChange={handleChange}
-        />
+        <form onSubmit={handleSubmit}>
+          <label>Name</label>
+          <input className= 'form-item'
+            id="name"
+            name="name"
+            value={classValues.name}
+            onChange={handleChange}
+          />
 
-        <label>Type</label>
-        <input className= 'form-item'
-          id="type"
-          name="type"
-          value={classValues.type}
-          onChange={handleChange}
-        />
+          <label>Type</label>
+          <input className= 'form-item'
+            id="type"
+            name="type"
+            value={classValues.type}
+            onChange={handleChange}
+          />
 
-        <label>Start Time</label>
-        <input className= 'form-item'
-          id="startTime"
-          name="startTime"
-          value={classValues.startTime}
-          onChange={handleChange}
-        />
+          <label>Start Time</label>
+          <input className= 'form-item'
+            id="startTime"
+            name="startTime"
+            value={classValues.startTime}
+            onChange={handleChange}
+          />
 
-        <label>Duration</label>
-        <input className= 'form-item'
-          id="duration"
-          name="duration"
-          value={classValues.duration}
-          onChange={handleChange}
-        />
+          <label>Duration</label>
+          <input className= 'form-item'
+            id="duration"
+            name="duration"
+            value={classValues.duration}
+            onChange={handleChange}
+          />
 
-        <label>Intensity Level</label>
-        <input className= 'form-item'
-          id="intensityLevel"
-          name="intensityLevel"
-          value={classValues.intensityLevel}
-          onChange={handleChange}
-        />
+          <label>Intensity Level</label>
+          <input className= 'form-item'
+            id="intensityLevel"
+            name="intensityLevel"
+            value={classValues.intensityLevel}
+            onChange={handleChange}
+          />
 
-        <label>Location</label>
-        <input className= 'form-item' 
-          className='form-item'
-          id="location"
-          name="location"
-          value={classValues.location}
-          onChange={handleChange}
-        />
+          <label>Location</label>
+          <input className= 'form-item' 
+            className='form-item'
+            id="location"
+            name="location"
+            value={classValues.location}
+            onChange={handleChange}
+          />
 
-        <label>Current number of Registered attendees</label>
-        <input className= 'form-item'
-          id="currentlyEnrolled"
-          name="currentlyEnrolled"
-          value={classValues.currentlyEnrolled}
-          onChange={handleChange}
-        />
+          <label>Current number of Registered attendees</label>
+          <input className= 'form-item'
+            id="currentlyEnrolled"
+            name="currentlyEnrolled"
+            value={classValues.currentlyEnrolled}
+            onChange={handleChange}
+          />
 
-        <label>Max Class Size</label>
-        <input className= 'form-item'
-          id="classLimit"
-          name="classLimit"
-          value={classValues.classLimit}
-          onChange={handleChange}
-        />
-        <button> Add Class </button>
-      </form>
+          <label>Max Class Size</label>
+          <input className= 'form-item'
+            id="classLimit"
+            name="classLimit"
+            value={classValues.classLimit}
+            onChange={handleChange}
+          />
+          <button> Add Class </button>
+        </form>
+        </section>
+
+      <section className='addclassimg'>
+        {/* image goes here */}
       </section>
-
-      <section className='addclassimg'></section>
     </div>
   );
 }

@@ -650,23 +650,29 @@ nav {
   max-width: 100%;
   display: flex;
 }
+.addclassform {
+  width: 50%;
+}
 form {
   display: flex;
   flex-direction: column;
-  width: 50%;
 }
-.addclassform {
-  width: 50%;
+.addclassform h1 {
+  text-align: center;
 }
 .addclassimg {
   background-size: 1000px;
   background-repeat: repeat-x;
-  background-image: url('/src/assets/Men-Fitness-Wallpaper-1.jpg');
+  background-image: url('/src/assets/fitness-class-img.jpg');
   background-position: center;
   color: #ffffff;
   width: 50%;
 }
 .form-item {
-  margin-bottom: 1%;
+  margin-bottom: 3%;
   border: 1px solid red;
+  width: 400px;
+}
+form button {
+  width: 100px;
 }

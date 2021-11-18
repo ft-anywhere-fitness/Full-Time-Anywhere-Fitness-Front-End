@@ -1,6 +1,5 @@
 // Libraries
 import React from "react";
-import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router";
 
 const Class = (props) => {

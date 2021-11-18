@@ -651,6 +651,7 @@ nav {
   max-width: 100%;
   display: flex;
   background-color: #629bcf;
+  padding-bottom: 2%;
 }
 .addclassform {
   width: 50%;
@@ -659,10 +660,9 @@ form {
   display: flex;
   flex-direction: column;
 }
-label {
-  margin-left: 5%;
-}
-input {
+.addclassform label,
+input,
+button {
   margin-left: 5%;
 }
 .addclassform h1 {
@@ -673,17 +673,14 @@ input {
   background-repeat: repeat-x;
   background-image: url('/src/assets/fitness-class-img.jpg');
   background-position: center;
-  color: #ffffff;
   width: 50%;
 }
 .form-item {
   margin-bottom: 3%;
-  border: 1px solid red;
   width: 400px;
 }
 button {
   width: 100px;
-  margin-left: 5%;
 }
 @media (max-width: 850px) {
   .addclasscontainer {
@@ -700,14 +697,6 @@ button {
   .addclassform h1 {
     text-align: start;
   }
-  .addclassimg {
-    width: 50%;
-  }
-  .form-item {
-    width: 80%;
-  }
-}
-@media (max-width: 550px) {
   .form-item {
     width: 80%;
   }

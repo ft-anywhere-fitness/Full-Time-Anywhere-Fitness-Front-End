@@ -2,11 +2,13 @@
     box-sizing: border-box;
     max-width: 100%;
     display: flex;
-    background-color: rgb(98, 155, 207);
+    background-color: rgb(98, 155, 207); //I thought this looked like a nice color, but anyone feel free to change it
+    padding-bottom: 2%;
 }
 
 .addclassform{
     width: 50%;
+    //50% so that the image can go on the other half
 }
 
 form{
@@ -14,12 +16,9 @@ form{
     flex-direction: column;
 }
 
-label{
+.addclassform label, input, button{
     margin-left: 5%;
-}
-
-input{
-    margin-left: 5%;;
+    //just to get it off the left side of the screen. I thought this looked better than having it centered
 }
 
 .addclassform h1{
@@ -31,25 +30,24 @@ input{
     background-repeat: repeat-x;
     background-image: url('/src/assets/fitness-class-img.jpg');
     background-position:center;
-    color: rgb(255, 255, 255);
     width: 50%;
 }
 
 .form-item{
     margin-bottom: 3%;
-    border: 1px solid red;
     width: 400px;
+    // wasn't totally sure how wide to make this
 }
 
 button{
     width: 100px;
-    margin-left: 5%;
+    //I basically picked an arbitrary width
 }
 
 @media(max-width: 850px){
+    //it just started to look funky at this screen width
     .addclasscontainer{
         display: flex;
-        // flex-wrap: wrap;
         width: 100%;
         justify-content: center;
     }
@@ -63,10 +61,7 @@ button{
 
     .addclassform h1{
         text-align: start;
-    }
-    
-    .addclassimg{
-        width: 50%;
+        //it just didn't look right in the center here
     }
 
     .form-item{
@@ -74,13 +69,9 @@ button{
     }
 }
 
-@media(max-width: 550px){
-    .form-item{
-        width: 80%;
-    }
-}
 
 @media(max-width: 450px){
+    //this is too skinny to have the image so I axed the image here
     .addclassimg{
         display: none;
     }

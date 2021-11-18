@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="app">
       <Header/>
-      {/* I just put AddClassForm in here temporarily so I could see if for styling --- Adam */}
+      {/* I just put AddClassForm in here temporarily so I could see it for styling --- Adam */}
       <AddClassForm/>
       <Routes>
         <Route exact path="/" element={<Landing />}/>
@@ -36,3 +36,4 @@ function App() {
 }
 
 export default App;
+

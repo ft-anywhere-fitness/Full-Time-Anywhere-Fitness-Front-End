@@ -135,7 +135,8 @@ function AddClassForm({ addNewClass }) {
         </section>
 
       <section className='addclassimg'>
-        {/* image goes here */}
+        {/* background image for right side of component goes here */}
+
       </section>
     </div>
   );

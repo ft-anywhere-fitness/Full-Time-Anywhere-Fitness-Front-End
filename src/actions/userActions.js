@@ -1,19 +1,19 @@
 // Libraries
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 // Axios Call to Register
 export const register = (credentials) => {
   return (dispatch) => {
-    let navigate = useNavigate();
+    dispatch(registering());
     axios
       .post("https://anywherefitnesslambda.herokuapp.com/api/auth/register", credentials)
       .then((response) => {
         console.log(response);
-        navigate("/login");
+        dispatch(successfulRegister());
       })
-      .then((error) => {
+      .catch((error) => {
         console.error(error);
+        dispatch(failedRegister());
       });
   };
 };
@@ -21,12 +21,10 @@ export const register = (credentials) => {
 // Axios Call to Login
 export const login = (credentials) => {
   return (dispatch) => {
-    let navigate = useNavigate();
     axios
       .post("https://anywherefitnesslambda.herokuapp.com/api/auth/login", credentials)
       .then((response) => {
         console.log(response);
-        navigate("/");
         // localStorage.setItem("token", response.data.token);
         // axios
         //   .get("https://anywherefitnesslambda.herokuapp.com/api/users")
@@ -39,7 +37,7 @@ export const login = (credentials) => {
         //     console.error(error);
         //   });
       })
-      .then((error) => {
+      .catch((error) => {
         console.error(error);
       });
   };
@@ -66,8 +64,12 @@ export const failedLogin = (errorMessage) => {
   return { type: FAILED_LOGIN, payload: errorMessage };
 };
 
-export const successfulRegister = (credentials) => {
-  return { type: SUCCESSFUL_REGISTER, payload: credentials };
+export const registering = () => {
+  return { type: REGISTERING };
+};
+
+export const successfulRegister = () => {
+  return { type: SUCCESSFUL_REGISTER };
 };
 
 export const failedRegister = (errorMessage) => {

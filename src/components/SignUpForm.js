@@ -8,7 +8,7 @@ import { register } from "../actions/userActions";
 
 const SignUpForm = ({ register, userData }) => {
   // State Management
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     "username": "",
     "password": "",
@@ -19,17 +19,6 @@ const SignUpForm = ({ register, userData }) => {
 
   // Event Handlers
   const handleChange = (event) => {
-    // if (event.target.value === ("1" || "2")) {
-    //   return setCredentials({
-    //     ...credentials,
-    //     [event.target.name]: Number(event.target.value)
-    //   });
-    // } else {
-    //   return setCredentials({
-    //     ...credentials,
-    //     [event.target.name]: event.target.value
-    //   });
-    // }
     setCredentials({
       ...credentials,
       [event.target.name]: event.target.value
@@ -38,9 +27,9 @@ const SignUpForm = ({ register, userData }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(credentials);
-    // await register(credentials);
-    // if (userData.isRegistering === false) {
+    credentials.role_id = Number(credentials.role_id);
+    register(credentials);
+    // if (userData.isRegistering === false && userData.registrationError === "") {
     //   navigate("/login");
     // }
   };
@@ -48,8 +37,9 @@ const SignUpForm = ({ register, userData }) => {
   // Returned Component
   return (
     <form onSubmit={handleSubmit}>
+      {userData.registrationError && <p>{userData.registrationError}</p>}
       <label>
-        Username
+        <span>Username </span>
         <input
           name="username"
           type="text"
@@ -57,8 +47,9 @@ const SignUpForm = ({ register, userData }) => {
           value={credentials.username}
         />
       </label>
+      <br />
       <label>
-        Email
+        <span>Email </span>
         <input
           name="email"
           type="email"
@@ -66,8 +57,9 @@ const SignUpForm = ({ register, userData }) => {
           value={credentials.email}
         />
       </label>
+      <br />
       <label>
-        Password
+        <span>Password </span>
         <input
           name="password"
           type="password"
@@ -77,18 +69,17 @@ const SignUpForm = ({ register, userData }) => {
       </label>
       <br />
       <label>
-        Client
+        <span>Client </span>
         <input
           name="role_id"
-          type="number"
+          type="radio"
           onChange={handleChange}
-          min="1"
-          max="2"
+          value="1"
         />
       </label>
       <br />
-      {/* <label>
-        Instructor
+      <label>
+        <span>Instructor </span>
         <input
           name="role_id"
           type="radio"
@@ -96,11 +87,11 @@ const SignUpForm = ({ register, userData }) => {
           value="2"
         />
       </label>
-      <br /> */}
+      <br />
       {
-        credentials.role_id === 2 &&
+        credentials.role_id === "2" &&
         <label>
-          Instructor Code
+          <span>Instructor Code </span>
           <input
             name="auth"
             type="text"

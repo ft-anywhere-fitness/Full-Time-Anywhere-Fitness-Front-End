@@ -420,6 +420,9 @@ nav {
     margin: 5%;
   }
 }
+.quickLooks {
+  background-color: #042C4F;
+}
 .top-sect {
   max-width: 100%;
 }
@@ -433,32 +436,38 @@ nav {
   display: flex;
   max-width: 100%;
   margin-bottom: 3%;
+  margin-right: 10%;
+  align-items: center;
 }
 .sect .img {
   width: 70%;
+  display: flex;
+  justify-content: center;
 }
 .sect .img img {
   border-radius: 999px;
-  width: 90%;
-  height: 60vh;
+  width: 70%;
+  height: 70vh;
 }
 .second-sect {
   display: flex;
   max-width: 100%;
   margin-bottom: 3%;
+  margin-left: 10%;
+  align-items: center;
 }
 .second-sect .img {
+  display: flex;
+  justify-content: center;
   width: 70%;
 }
 .second-sect .img img {
   border-radius: 999px;
   width: 70%;
-  margin-left: 10%;
   height: 70vh;
 }
 .paragraph {
   width: 40%;
-  margin-top: 6%;
 }
 .paragraph h2 {
   font-size: 2.5rem;
@@ -466,4 +475,112 @@ nav {
 .paragraph p {
   font-size: 2rem;
   color: #FAF9F6;
+}
+.class-container {
+  border: 1px solid red;
+  display: flex;
+}
+.class-container:hover {
+  font-size: 1.15rem;
+}
+.class-container:hover h3 {
+  text-decoration: underline;
+  transition: 0.3s;
+}
+.info-container,
+.img-container {
+  width: 50%;
+  border: 1px solid red;
+}
+.class-name-container,
+.class-type {
+  text-align: center;
+}
+.class-details-container {
+  display: flex;
+}
+.class-location-times,
+.intensity-attendees-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  width: 50%;
+  justify-content: space-between;
+}
+.class-location-times p,
+.intensity-attendees-container p {
+  margin: 1.25% 0.75%;
+  padding: 0.75%;
+}
+.class-bold {
+  font-weight: bold;
+}
+.img-container {
+  background-size: 1000px;
+  background-repeat: repeat-x;
+  background-image: url('/src/assets/Men-Fitness-Wallpaper-1.jpg');
+  background-position: center;
+  color: #ffffff;
+}
+@media (max-width: 950px) and (min-width: 620px) {
+  .class-location-times,
+  .intensity-attendees-container {
+    border: none;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+  }
+  .class-details-container,
+  .intensity-attendees-container p {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+}
+@media (max-width: 620px) {
+  .class-container {
+    background-color: red;
+    background-size: 1000px;
+    background-repeat: repeat-x;
+    background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/Men-Fitness-Wallpaper-1.jpg');
+    background-position: center;
+    color: #ffffff;
+  }
+  .info-container h3 {
+    background-color: black;
+  }
+  .class-details-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .class-location-times,
+  .intensity-attendees-container {
+    width: 100%;
+  }
+  .img-container {
+    display: none;
+  }
+  .info-container {
+    width: 100%;
+    text-align: center;
+  }
+  .class-location-times,
+  .intensity-attendees-container {
+    border: none;
+  }
+@media (max-width: 1200px) {
+  .top-sect img {
+    height: auto;
+  }
+  .sect .img img {
+    height: auto;
+  }
+  .second-sect .img img {
+    height: auto;
+  }
+  .paragraph h2 {
+    font-size: 100%;
+  }
+  .paragraph p {
+    font-size: 100%;
+  }
+}
 }

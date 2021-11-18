@@ -1,8 +1,9 @@
-// Libraries
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { Routes, Route, NavLink } from 'react-router-dom';
+import LoginForm from './LoginForm';
+import SignUpForm from './SignUpForm'
 
-export default function Header() {
+export default function Header(){
     return(
         <header className='header'>
             <nav className='header-nav'>
@@ -21,5 +22,7 @@ export default function Header() {
                 </NavLink>
             </nav>
         </header>
+
     )
-};
+}
+

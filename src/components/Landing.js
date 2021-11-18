@@ -3,6 +3,7 @@ import theRockWithquotes from "../assets/theRockWithquotes.jpg";
 import abs2 from "../assets/abs2.jpg"
 import squats from "../assets/squats.jpg"
 import legs from "../assets/legs.jpg"
+import ClientReviews from "./ClientReviews";
 
 
 export default function Landing() {
@@ -43,6 +44,7 @@ export default function Landing() {
                     <p> Access to state of the art gym equipment to sculpt your body into a masterpiece comparable to that of Arnold Schwarzenegger!</p>
                 </div>
             </div>
+            <ClientReviews/>
         </div>
     )
 }

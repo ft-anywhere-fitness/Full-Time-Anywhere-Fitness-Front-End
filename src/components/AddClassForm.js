@@ -107,14 +107,6 @@ function AddClassForm({ addNewClass }) {
             onChange={handleChange}
           />
 
-          <label>Current number of Registered attendees</label>
-          <input className= 'form-item'
-            id="currentlyEnrolled"
-            name="currentlyEnrolled"
-            value={classValues.currentlyEnrolled}
-            onChange={handleChange}
-          />
-
           <label>Max Class Size</label>
           <input className= 'form-item'
             id="classLimit"

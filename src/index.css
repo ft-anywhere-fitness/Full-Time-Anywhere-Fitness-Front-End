@@ -320,6 +320,7 @@ nav {
   box-sizing: border-box;
   background-color: #042C4F;
   color: #d1bdbd;
+  padding-bottom: 2%;
 }
 .header-nav {
   display: flex;
@@ -657,6 +658,12 @@ form {
   display: flex;
   flex-direction: column;
 }
+label {
+  margin-left: 5%;
+}
+input {
+  margin-left: 5%;
+}
 .addclassform h1 {
   text-align: center;
 }
@@ -673,6 +680,7 @@ form {
   border: 1px solid red;
   width: 400px;
 }
-form button {
+button {
   width: 100px;
+  margin-left: 5%;
 }

@@ -1,12 +1,20 @@
+//start of clientreview styles
+
+.scontainer {
+    display:flex;
+    justify-content: center;
+    background-color:#042C4F;
+}
+
 .stories {
-    display: flex;
-    width: 80%;
+    display: flex;;
     justify-content: space-around;
     justify-content: space-between;
     justify-content: center;
-    padding: 1% 10% 0% 10%;
+    padding: 1% 0% 0% 0%;
     //place holder for background color so the words show up
-    background-color:#042C4F;
+    
+    
 }
 
 .client {
@@ -20,10 +28,51 @@
 }
 
 .stories img {
-    width: 80%;
-    height: 60%;
+    float: left;
+    width:  250px;
+    height: 250px;
+    object-fit: cover;
 }
-
+.text{
+    display:flex;
+    justify-content: center;
+    height:auto;
+}
 .stories p{
     width: 80%;
+    text-align: center;
 }
+
+//media breakpoint for clientReviews
+@media(max-width: 900px){
+    .stories img {
+        width: 220px;
+        height: 220px;
+    }
+    .stories p{
+        font-size:.9rem;
+    }  
+}
+
+@media(max-width: 768px){
+    .stories img {
+        width: 175px;
+        height: 175px;
+    }
+    .stories p{
+        font-size:.8rem;
+    }  
+}
+
+@media(max-width: 600px){
+    .stories img {
+        width: 125px;
+        height: 125px;
+    }
+    .stories p{
+        font-size:.6rem;
+    }  
+}
+
+//end of client review styles
+    

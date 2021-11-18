@@ -303,14 +303,298 @@ template {
 [hidden] {
   display: none;
 }
+html {
+  font-family: 'Libre Franklin', sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+nav {
+  display: flex;
+  align-items: center;
+}
+.header {
+  height: 10vh;
+  padding-bottom: 5%;
+  font-family: '' Libre Franklin ', sans-serif';
+  box-sizing: border-box;
+  background-color: #042C4F;
+  color: #d1bdbd;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 30%;
+  margin-left: 10%;
+}
+.header-nav-item {
+  text-decoration: none;
+  color: #d1bdbd;
+}
+.underline {
+  position: relative;
+}
+.underline::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0074D9;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .underline:hover::before {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
+@media (max-width: 940px) {
+  .header-nav-item {
+    margin: auto 2%;
+  }
+}
+@media (max-width: 620px) {
+  .header-nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 7%;
+    margin-left: 7%;
+    text-align: center;
+  }
+  .header {
+    height: auto;
+  }
+  .header-nav-item {
+    padding: 1%;
+  }
+}
+.footer {
+  box-sizing: border-box;
+  background-color: #042C4F;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 3%;
+}
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  width: 100%;
+  margin: 0% 10%;
+}
+.footer-nav-item {
+  color: #d1bdbd;
+  text-decoration: none;
+}
+.disclaimer-container {
+  width: 20%;
+  font-size: 0.65rem;
+  color: rgba(209, 189, 189, 0.842);
+  text-align: center;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+.footer-links a {
+  margin: 3% 0;
+}
+.footer-muscle-arm {
+  font-size: 4rem;
+}
+@media (max-width: 620px) {
+  .footer-nav {
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .footer-nav h4 {
+    margin: 5%;
+  }
+}
+.quickLooks {
+  background-color: #042C4F;
+}
+.top-sect {
+  max-width: 100%;
+}
+.top-sect img {
+  width: 60%;
+  margin: 0% 20% 0%;
+  padding: 5% 0;
+  height: 90vh;
+}
+.sect {
+  display: flex;
+  max-width: 100%;
+  margin-bottom: 3%;
+  margin-right: 10%;
+  align-items: center;
+}
+.sect .img {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+.sect .img img {
+  border-radius: 999px;
+  width: 70%;
+  height: 70vh;
+}
+.second-sect {
+  display: flex;
+  max-width: 100%;
+  margin-bottom: 3%;
+  margin-left: 10%;
+  align-items: center;
+}
+.second-sect .img {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+.second-sect .img img {
+  border-radius: 999px;
+  width: 70%;
+  height: 70vh;
+}
+.paragraph {
+  width: 40%;
+}
+.paragraph h2 {
+  font-size: 2.5rem;
+}
+.paragraph p {
+  font-size: 2rem;
+  color: #FAF9F6;
+}
+@media (max-width: 1200px) {
+  .top-sect img {
+    height: auto;
+  }
+  .sect .img img {
+    height: auto;
+  }
+  .second-sect .img img {
+    height: auto;
+  }
+  .paragraph h2 {
+    font-size: 100%;
+  }
+  .paragraph p {
+    font-size: 100%;
+  }
+}
+.class-container {
+  border: 1px solid red;
+  display: flex;
+}
+.class-container:hover {
+  font-size: 1.15rem;
+}
+.class-container:hover h3 {
+  text-decoration: underline;
+  transition: 0.3s;
+}
+.info-container,
+.img-container {
+  width: 50%;
+  border: 1px solid red;
+}
+.class-name-container,
+.class-type {
+  text-align: center;
+}
+.class-details-container {
+  display: flex;
+}
+.class-location-times,
+.intensity-attendees-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  width: 50%;
+  justify-content: space-between;
+}
+.class-location-times p,
+.intensity-attendees-container p {
+  margin: 1.25% 0.75%;
+  padding: 0.75%;
+}
+.class-bold {
+  font-weight: bold;
+}
+.img-container {
+  background-size: 1000px;
+  background-repeat: repeat-x;
+  background-image: url('/src/assets/Men-Fitness-Wallpaper-1.jpg');
+  background-position: center;
+  color: #ffffff;
+}
+@media (max-width: 950px) and (min-width: 620px) {
+  .class-location-times,
+  .intensity-attendees-container {
+    border: none;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+  }
+  .class-details-container,
+  .intensity-attendees-container p {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+}
+@media (max-width: 620px) {
+  .class-container {
+    background-color: red;
+    background-size: 1000px;
+    background-repeat: repeat-x;
+    background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/Men-Fitness-Wallpaper-1.jpg');
+    background-position: center;
+    color: #ffffff;
+  }
+  .info-container h3 {
+    background-color: black;
+  }
+  .class-details-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .class-location-times,
+  .intensity-attendees-container {
+    width: 100%;
+  }
+  .img-container {
+    display: none;
+  }
+  .info-container {
+    width: 100%;
+    text-align: center;
+  }
+  .class-location-times,
+  .intensity-attendees-container {
+    border: none;
+  }
+}
+.scontainer {
+  display: flex;
+  justify-content: center;
+  background-color: #042C4F;
+}
 .stories {
   display: flex;
-  width: 80%;
   justify-content: space-around;
   justify-content: space-between;
   justify-content: center;
-  padding: 1% 10% 0% 10%;
-  background-color: #042C4F;
+  padding: 1% 0% 0% 0%;
 }
 .client {
   flex: 1;
@@ -320,9 +604,44 @@ template {
   color: #FAF9F6;
 }
 .stories img {
-  width: 80%;
-  height: 60%;
+  float: left;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+.text {
+  display: flex;
+  justify-content: center;
+  height: auto;
 }
 .stories p {
   width: 80%;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .stories img {
+    width: 220px;
+    height: 220px;
+  }
+  .stories p {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .stories img {
+    width: 175px;
+    height: 175px;
+  }
+  .stories p {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 600px) {
+  .stories img {
+    width: 125px;
+    height: 125px;
+  }
+  .stories p {
+    font-size: 0.6rem;
+  }
 }

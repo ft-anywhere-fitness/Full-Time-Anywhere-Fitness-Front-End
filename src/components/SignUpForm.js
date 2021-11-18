@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 
 // Action
-import { newUser } from "../actions/userAction";
+import { newUser } from "../actions/userActions";
 
 const SignUpForm = ({ newUser }) => {
   // State Management

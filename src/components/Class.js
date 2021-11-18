@@ -26,6 +26,7 @@ const Class = (props) => {
   const handleClick = e  => {
     navigate(`/class/${class_id}`)
   }
+  
   //isFull() checks if the class is full, and returns a message saying it's full if so.
   const isFull= () =>{
     if(currentlyEnrolled >= classSizeLimit){

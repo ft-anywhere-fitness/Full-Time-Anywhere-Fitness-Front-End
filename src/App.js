@@ -19,6 +19,7 @@ function App() {
   return (
     <div className="app">
       <Header/>
+      <AddClassForm/>
       <Routes>
         <Route exact path="/" element={<Landing />}/>
         <Route path="/login" element={<LoginForm />}/>

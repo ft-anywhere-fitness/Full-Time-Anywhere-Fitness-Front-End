@@ -29,6 +29,7 @@ const initialValues = {
 
 
 function AddClassForm({ addNewClass }) {
+
   const [classValues, setClassValues] = useState(initialValues);
   let navigate = useNavigate();
 
@@ -58,12 +59,13 @@ function AddClassForm({ addNewClass }) {
         <h1 className= 'addclassh1'>Add a class</h1>
 
         <form onSubmit={handleSubmit}>
-          <label>Name</label>
+          <label>Class Name</label>
           <input className= 'form-item'
             id="name"
             name="name"
             value={classValues.name}
             onChange={handleChange}
+            maxLength="30"
             required = 'true'
           />
 
@@ -73,6 +75,7 @@ function AddClassForm({ addNewClass }) {
             name="type"
             value={classValues.type}
             onChange={handleChange}
+            maxLength="15"
             required = 'true'
           />
 
@@ -117,6 +120,7 @@ function AddClassForm({ addNewClass }) {
           <input className= 'form-item'
             id="classLimit"
             name="classLimit"
+            type="number"
             value={classValues.classLimit}
             onChange={handleChange}
             required = 'true'

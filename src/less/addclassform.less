@@ -44,3 +44,47 @@ button{
     width: 100px;
     margin-left: 5%;
 }
+
+@media(max-width: 850px){
+    .addclasscontainer{
+        display: flex;
+        // flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .addclassform{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        justify-content: center;
+    }
+
+    .addclassform h1{
+        text-align: start;
+    }
+    
+    .addclassimg{
+        width: 50%;
+    }
+
+    .form-item{
+        width: 80%;
+    }
+}
+
+@media(max-width: 550px){
+    .form-item{
+        width: 80%;
+    }
+}
+
+@media(max-width: 450px){
+    .addclassimg{
+        display: none;
+    }
+
+    .addclassform{
+        width: 100%;
+    }
+}

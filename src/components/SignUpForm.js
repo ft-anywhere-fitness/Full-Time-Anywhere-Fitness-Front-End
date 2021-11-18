@@ -8,6 +8,7 @@ import { register } from "../actions/userActions";
 
 const SignUpForm = ({ register, userData }) => {
   // State Management
+  const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     "username": "",
     "password": "",
@@ -18,19 +19,30 @@ const SignUpForm = ({ register, userData }) => {
 
   // Event Handlers
   const handleChange = (event) => {
+    // if (event.target.value === ("1" || "2")) {
+    //   return setCredentials({
+    //     ...credentials,
+    //     [event.target.name]: Number(event.target.value)
+    //   });
+    // } else {
+    //   return setCredentials({
+    //     ...credentials,
+    //     [event.target.name]: event.target.value
+    //   });
+    // }
     setCredentials({
       ...credentials,
       [event.target.name]: event.target.value
     });
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    await register(credentials);
-    if (userData.isRegistering === false) {
-      // const navigate = useNavigate();
-      // navigate("/login");
-    }
+    console.log(credentials);
+    // await register(credentials);
+    // if (userData.isRegistering === false) {
+    //   navigate("/login");
+    // }
   };
 
   // Returned Component
@@ -68,22 +80,23 @@ const SignUpForm = ({ register, userData }) => {
         Client
         <input
           name="role_id"
-          type="radio"
+          type="number"
           onChange={handleChange}
-          value={1}
+          min="1"
+          max="2"
         />
       </label>
       <br />
-      <label>
+      {/* <label>
         Instructor
         <input
           name="role_id"
           type="radio"
           onChange={handleChange}
-          value={2}
+          value="2"
         />
       </label>
-      <br />
+      <br /> */}
       {
         credentials.role_id === 2 &&
         <label>

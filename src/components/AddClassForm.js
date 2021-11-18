@@ -29,7 +29,6 @@ const initialValues = {
 
 
 function AddClassForm({ addNewClass }) {
-
   const [classValues, setClassValues] = useState(initialValues);
   let navigate = useNavigate();
 
@@ -63,16 +62,18 @@ function AddClassForm({ addNewClass }) {
           <input className= 'form-item'
             id="name"
             name="name"
+            type='text'
             value={classValues.name}
             onChange={handleChange}
             maxLength="30"
             required = 'true'
           />
 
-          <label>Type</label>
+          <label>Class Type</label>
           <input className= 'form-item'
             id="type"
             name="type"
+            type='text'
             value={classValues.type}
             onChange={handleChange}
             maxLength="15"
@@ -83,6 +84,7 @@ function AddClassForm({ addNewClass }) {
           <input className= 'form-item'
             id="startTime"
             name="startTime"
+            type='text'
             value={classValues.startTime}
             onChange={handleChange}
             required = 'true'
@@ -92,6 +94,7 @@ function AddClassForm({ addNewClass }) {
           <input className= 'form-item'
             id="duration"
             name="duration"
+            type='text'
             value={classValues.duration}
             onChange={handleChange}
             required = 'true'
@@ -101,6 +104,7 @@ function AddClassForm({ addNewClass }) {
           <input className= 'form-item'
             id="intensityLevel"
             name="intensityLevel"
+            type='text'
             value={classValues.intensityLevel}
             onChange={handleChange}
             required = 'true'
@@ -111,6 +115,7 @@ function AddClassForm({ addNewClass }) {
             className='form-item'
             id="location"
             name="location"
+            type='text'
             value={classValues.location}
             onChange={handleChange}
             required = 'true'

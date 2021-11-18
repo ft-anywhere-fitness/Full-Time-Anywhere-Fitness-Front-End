@@ -64,6 +64,7 @@ function AddClassForm({ addNewClass }) {
             name="name"
             value={classValues.name}
             onChange={handleChange}
+            required = 'true'
           />
 
           <label>Type</label>
@@ -72,6 +73,7 @@ function AddClassForm({ addNewClass }) {
             name="type"
             value={classValues.type}
             onChange={handleChange}
+            required = 'true'
           />
 
           <label>Start Time</label>
@@ -80,6 +82,7 @@ function AddClassForm({ addNewClass }) {
             name="startTime"
             value={classValues.startTime}
             onChange={handleChange}
+            required = 'true'
           />
 
           <label>Duration</label>
@@ -88,6 +91,7 @@ function AddClassForm({ addNewClass }) {
             name="duration"
             value={classValues.duration}
             onChange={handleChange}
+            required = 'true'
           />
 
           <label>Intensity Level</label>
@@ -96,6 +100,7 @@ function AddClassForm({ addNewClass }) {
             name="intensityLevel"
             value={classValues.intensityLevel}
             onChange={handleChange}
+            required = 'true'
           />
 
           <label>Location</label>
@@ -105,6 +110,7 @@ function AddClassForm({ addNewClass }) {
             name="location"
             value={classValues.location}
             onChange={handleChange}
+            required = 'true'
           />
 
           <label>Max Class Size</label>
@@ -113,6 +119,7 @@ function AddClassForm({ addNewClass }) {
             name="classLimit"
             value={classValues.classLimit}
             onChange={handleChange}
+            required = 'true'
           />
           <button> Add Class </button>
         </form>

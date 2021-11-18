@@ -19,6 +19,7 @@ function App() {
   return (
     <div className="app">
       <Header/>
+      {/* I just put AddClassForm in here temporarily so I could see if for styling --- Adam */}
       <AddClassForm/>
       <Routes>
         <Route exact path="/" element={<Landing />}/>

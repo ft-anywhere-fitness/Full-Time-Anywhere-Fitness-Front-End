@@ -1,3 +1,6 @@
+//column. Space in between, center them, make them bigger. Put images in.
+//Put it over a Background image?
+
 // Libraries
 // import AxiosWithAuth from "../utils/axiosWithAuth";
 import React, { useState } from "react";
@@ -50,12 +53,13 @@ function AddClassForm({ addNewClass }) {
   };
 
   return (
-    <div>
-      <h1>Add a class</h1>
+    <div className= 'addclasscontainer'>
+      <section className= 'addclassform'>
+      <h1 className= 'addclassh1'>Add a class</h1>
 
       <form onSubmit={handleSubmit}>
         <label>Name</label>
-        <input
+        <input className= 'form-item'
           id="name"
           name="name"
           value={classValues.name}
@@ -63,7 +67,7 @@ function AddClassForm({ addNewClass }) {
         />
 
         <label>Type</label>
-        <input
+        <input className= 'form-item'
           id="type"
           name="type"
           value={classValues.type}
@@ -71,7 +75,7 @@ function AddClassForm({ addNewClass }) {
         />
 
         <label>Start Time</label>
-        <input
+        <input className= 'form-item'
           id="startTime"
           name="startTime"
           value={classValues.startTime}
@@ -79,7 +83,7 @@ function AddClassForm({ addNewClass }) {
         />
 
         <label>Duration</label>
-        <input
+        <input className= 'form-item'
           id="duration"
           name="duration"
           value={classValues.duration}
@@ -87,7 +91,7 @@ function AddClassForm({ addNewClass }) {
         />
 
         <label>Intensity Level</label>
-        <input
+        <input className= 'form-item'
           id="intensityLevel"
           name="intensityLevel"
           value={classValues.intensityLevel}
@@ -95,7 +99,8 @@ function AddClassForm({ addNewClass }) {
         />
 
         <label>Location</label>
-        <input
+        <input className= 'form-item' 
+          className='form-item'
           id="location"
           name="location"
           value={classValues.location}
@@ -103,7 +108,7 @@ function AddClassForm({ addNewClass }) {
         />
 
         <label>Current number of Registered attendees</label>
-        <input
+        <input className= 'form-item'
           id="currentlyEnrolled"
           name="currentlyEnrolled"
           value={classValues.currentlyEnrolled}
@@ -111,7 +116,7 @@ function AddClassForm({ addNewClass }) {
         />
 
         <label>Max Class Size</label>
-        <input
+        <input className= 'form-item'
           id="classLimit"
           name="classLimit"
           value={classValues.classLimit}
@@ -119,6 +124,9 @@ function AddClassForm({ addNewClass }) {
         />
         <button> Add Class </button>
       </form>
+      </section>
+
+      <section className='addclassimg'></section>
     </div>
   );
 }

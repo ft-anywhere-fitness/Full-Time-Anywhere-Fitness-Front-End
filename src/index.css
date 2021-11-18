@@ -320,6 +320,7 @@ nav {
   box-sizing: border-box;
   background-color: #042C4F;
   color: #d1bdbd;
+  padding-bottom: 2%;
 }
 .header-nav {
   display: flex;
@@ -643,5 +644,68 @@ nav {
   }
   .stories p {
     font-size: 0.6rem;
+  }
+}
+.addclasscontainer {
+  box-sizing: border-box;
+  max-width: 100%;
+  display: flex;
+  background-color: #629bcf;
+  padding-bottom: 2%;
+}
+.addclassform {
+  width: 50%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.addclassform label,
+input,
+button {
+  margin-left: 5%;
+}
+.addclassform h1 {
+  text-align: center;
+}
+.addclassimg {
+  background-size: 1000px;
+  background-repeat: repeat-x;
+  background-image: url('/src/assets/fitness-class-img.jpg');
+  background-position: center;
+  width: 50%;
+}
+.form-item {
+  margin-bottom: 3%;
+  width: 400px;
+}
+button {
+  width: 100px;
+}
+@media (max-width: 850px) {
+  .addclasscontainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .addclassform {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+  }
+  .addclassform h1 {
+    text-align: start;
+  }
+  .form-item {
+    width: 80%;
+  }
+}
+@media (max-width: 450px) {
+  .addclassimg {
+    display: none;
+  }
+  .addclassform {
+    width: 100%;
   }
 }

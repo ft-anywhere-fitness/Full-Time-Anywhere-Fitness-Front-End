@@ -1,14 +1,14 @@
 // Libraries
+import axios from "axios";
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 // Action
-import { register } from "../actions/userActions";
+import { successfulRegister, registering, failedRegister } from "../actions/userActions";
 
-const SignUpForm = ({ register, userData }) => {
+const SignUpForm = ({ userData }) => {
   // State Management
-  // const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     "username": "",
     "password": "",
@@ -16,6 +16,9 @@ const SignUpForm = ({ register, userData }) => {
     "role_id": null,
     "auth": ""
   });
+
+  // Navigate
+  const navigate = useNavigate();
 
   // Event Handlers
   const handleChange = (event) => {
@@ -28,16 +31,20 @@ const SignUpForm = ({ register, userData }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     credentials.role_id = Number(credentials.role_id);
-    register(credentials);
-    // if (userData.isRegistering === false && userData.registrationError === "") {
-    //   navigate("/login");
-    // }
+    axios
+      .post("https://anywherefitnesslambda.herokuapp.com/api/auth/register", credentials)
+      .then((response) => {
+        console.log(response);
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   // Returned Component
   return (
     <form onSubmit={handleSubmit}>
-      {userData.registrationError && <p>{userData.registrationError}</p>}
       <label>
         <span>Username </span>
         <input
@@ -106,13 +113,4 @@ const SignUpForm = ({ register, userData }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    userData: {
-      "isRegistering": state.user.isRegistering,
-      "registrationError": state.user.registrationError
-    }
-  };
-};
-
-export default connect(mapStateToProps, { register })(SignUpForm);
+export default SignUpForm;

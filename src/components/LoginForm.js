@@ -1,16 +1,17 @@
 // Libraries
 import React, { useState } from "react";
-import { connect } from "react-redux";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-// Actions
-import { login } from "../actions/userActions";
-
-const LoginForm = ({ login }) => {
+const LoginForm = () => {
   // State Management
   const [credentials, setCredentials] = useState({
     "username": "",
     "password": ""
   });
+
+  // Navigate
+  let navigate = useNavigate();
 
   // Event Handlers
   const handleChange = (event) => {
@@ -22,7 +23,16 @@ const LoginForm = ({ login }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    login(credentials);
+    axios
+      .post("https://anywherefitnesslambda.herokuapp.com/api/auth/login", credentials)
+      .then((response) => {
+        console.log(response.data.token);
+        window.localStorage.setItem("token", response.data.token);
+        navigate("/classes");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   // Returned Component
@@ -54,4 +64,4 @@ const LoginForm = ({ login }) => {
 };
 
 
-export default connect(null, { login })(LoginForm);
+export default LoginForm;

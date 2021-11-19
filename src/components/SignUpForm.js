@@ -1,13 +1,15 @@
 // Libraries
-import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 // Action
-import { successfulRegister, registering, failedRegister } from "../actions/userActions";
+import { signUp } from "../actions/userActions";
 
-const SignUpForm = ({ userData }) => {
+const SignUpForm = (props) => {
+  const { registerErrorMessage, signUp, isRegistering, registered } = props;
+  const navigate = useNavigate();
+
   // State Management
   const [credentials, setCredentials] = useState({
     "username": "",
@@ -16,9 +18,6 @@ const SignUpForm = ({ userData }) => {
     "role_id": null,
     "auth": ""
   });
-
-  // Navigate
-  const navigate = useNavigate();
 
   // Event Handlers
   const handleChange = (event) => {
@@ -31,20 +30,20 @@ const SignUpForm = ({ userData }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     credentials.role_id = Number(credentials.role_id);
-    axios
-      .post("https://anywherefitnesslambda.herokuapp.com/api/auth/register", credentials)
-      .then((response) => {
-        console.log(response);
-        navigate("/login");
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    signUp(credentials);
   };
+
+  useEffect(() => {
+    if (registered) {
+      navigate("/login");
+    }
+  }, [registered]);
 
   // Returned Component
   return (
     <form onSubmit={handleSubmit}>
+      {isRegistering && <h3>Registering...</h3>}
+      {registerErrorMessage && <h3>{registerErrorMessage}</h3>}
       <label>
         <span>Username </span>
         <input
@@ -109,8 +108,17 @@ const SignUpForm = ({ userData }) => {
       }
       <br />
       <button>Log In</button>
+
     </form>
   );
 };
 
-export default SignUpForm;
+const mapStateToProps = (state) => {
+  return {
+    registerErrorMessage: state.user.registerErrorMessage,
+    isRegistering: state.user.isRegistering,
+    registered: state.user.registered
+  };
+};
+
+export default connect(mapStateToProps, { signUp })(SignUpForm);

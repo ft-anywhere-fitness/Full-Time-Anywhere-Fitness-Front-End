@@ -1,21 +1,24 @@
 // Libraries
+import axios from "axios";
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 // Action
-import { newUser } from "../actions/userActions";
+import { successfulRegister, registering, failedRegister } from "../actions/userActions";
 
-const SignUpForm = ({ newUser }) => {
+const SignUpForm = ({ userData }) => {
   // State Management
   const [credentials, setCredentials] = useState({
-    firstName: "",
-    lastName: "",
-    username: "",
-    password: "",
-    email: "",
-    role: "",
-    user_id: null
+    "username": "",
+    "password": "",
+    "email": "",
+    "role_id": null,
+    "auth": ""
   });
+
+  // Navigate
+  const navigate = useNavigate();
 
   // Event Handlers
   const handleChange = (event) => {
@@ -27,90 +30,87 @@ const SignUpForm = ({ newUser }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    newUser(credentials);
+    credentials.role_id = Number(credentials.role_id);
+    axios
+      .post("https://anywherefitnesslambda.herokuapp.com/api/auth/register", credentials)
+      .then((response) => {
+        console.log(response);
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   // Returned Component
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        First Name:
-        <input
-          name="firstName"
-          type="text"
-          placeholder="First"
-          onChange={handleChange}
-          value={credentials.firstName}
-        />
-      </label>
-      <label>
-        Last Name:
-        <input
-          name="lastName"
-          type="text"
-          placeholder="Last"
-          onChange={handleChange}
-          value={credentials.lastName}
-        />
-      </label>
-      <label>
-        Email:
-        <input
-          name="email"
-          type="email"
-          placeholder="example@something.com"
-          onChange={handleChange}
-          value={credentials.email}
-        />
-      </label>
-      <label>
-        Username:
+        <span>Username </span>
         <input
           name="username"
           type="text"
-          placeholder="Username"
           onChange={handleChange}
           value={credentials.username}
         />
       </label>
+      <br />
       <label>
-        Password:
+        <span>Email </span>
+        <input
+          name="email"
+          type="email"
+          onChange={handleChange}
+          value={credentials.email}
+        />
+      </label>
+      <br />
+      <label>
+        <span>Password </span>
         <input
           name="password"
           type="password"
-          placeholder="Password"
           onChange={handleChange}
           value={credentials.password}
         />
       </label>
       <br />
       <label>
-        Instructor
+        <span>Client </span>
         <input
-          name="role"
+          name="role_id"
           type="radio"
           onChange={handleChange}
-          value="Instructor"
+          value="1"
         />
       </label>
       <br />
       <label>
-        Client
+        <span>Instructor </span>
         <input
-          name="role"
+          name="role_id"
           type="radio"
           onChange={handleChange}
-          value="Client"
+          value="2"
         />
       </label>
+      <br />
+      {
+        credentials.role_id === "2" &&
+        <label>
+          <span>Instructor Code </span>
+          <input
+            name="auth"
+            type="text"
+            onChange={handleChange}
+            value={credentials.auth}
+          />
+        </label>
+      }
       <br />
       <button>Log In</button>
     </form>
   );
 };
 
-const mapStateToProps = (state) => {
-  return { user: state.user };
-};
-
-export default connect(mapStateToProps, { newUser })(SignUpForm);
+export default SignUpForm;

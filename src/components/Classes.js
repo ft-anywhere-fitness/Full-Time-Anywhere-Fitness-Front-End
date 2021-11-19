@@ -1,35 +1,26 @@
 // Libraries
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
-import axios from 'axios';
 
 // Components
-
-
-
-
-
 import Class from "./Class";
 
 const Classes = () => {
-
   const [classes, setClasses] = useState([]);
-  
 
   useEffect(() => {
     AxiosWithAuth()
       .get("api/classes")
-        .then(res => {
-          console.log(res);
-          setClasses(res.data)
-        })
-        .catch(err => {
-          console.log(err);
-        })
-  },[])
+      .then(res => {
+        console.log(res);
+        setClasses(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
 
-  // const { classes } = props;
   return (
     <div>
       {classes.map((session) => {

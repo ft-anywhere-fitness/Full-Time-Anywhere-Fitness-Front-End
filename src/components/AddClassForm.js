@@ -2,10 +2,10 @@
 //Put it over a Background image?
 
 // Libraries
-// import AxiosWithAuth from "../utils/axiosWithAuth";
+import AxiosWithAuth from "../utils/AxiosWithAuth";
 import React, { useState } from "react";
 import { connect } from "react-redux";
-// import {useHistory} from "react-router-dom"
+
 // Actions
 import { addNewClass } from "../actions/classActions";
 import { useNavigate } from "react-router-dom";
@@ -13,24 +13,20 @@ import { useNavigate } from "react-router-dom";
 // Initial State (this is subject to change)
 const initialValues = {
   name: "",
-  type: "",
-  startTime: "",
-  duration: {
-    hours: "",
-    minutes: "",
-    seconds: ""
-  },
-  intensityLevel: "",
+  class_type_name: "",
+  start_time: "",
+  duration: "",
+  intensity: "",
   location: "",
-  currentlyEnrolled: "",
-  classSizeLimit: ""
+  registrants: "",
+  max_class_size: ""
 };
 
 
 
 function AddClassForm({ addNewClass }) {
   const [classValues, setClassValues] = useState(initialValues);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = e => {
     setClassValues({ ...classValues, [e.target.name]: e.target.value });
@@ -38,18 +34,18 @@ function AddClassForm({ addNewClass }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    addNewClass(classValues);
-    // AxiosWithAuth()
-    //     .post('/', classValues)
-    //     .then(resp=> {
-    //         console.log(resp);
-    //         push('/');
-    //     })
-    //     .catch(err=> {
-    //         console.log(err);
-    //     })
-    // push('/classes');
-    navigate('/classes')
+    // addNewClass(classValues);
+    AxiosWithAuth()
+        .post('/api/classes', classValues)
+        .then(resp=> {
+            console.log(resp);
+            navigate('/classes')
+        })
+        .catch(err=> {
+            console.log(err);
+        })
+    
+    
   };
 
   return (
@@ -72,9 +68,9 @@ function AddClassForm({ addNewClass }) {
           <label>Class Type</label>
           <input className= 'form-item'
             id="type"
-            name="type"
+            name="class_type_name"
             type='text'
-            value={classValues.type}
+            value={classValues.class_type_name}
             onChange={handleChange}
             maxLength="15"
             required = 'true'
@@ -83,9 +79,9 @@ function AddClassForm({ addNewClass }) {
           <label>Start Time</label>
           <input className= 'form-item'
             id="startTime"
-            name="startTime"
+            name="start_time"
             type='text'
-            value={classValues.startTime}
+            value={classValues.start_time}
             onChange={handleChange}
             required = 'true'
           />
@@ -103,16 +99,15 @@ function AddClassForm({ addNewClass }) {
           <label>Intensity Level</label>
           <input className= 'form-item'
             id="intensityLevel"
-            name="intensityLevel"
-            type='text'
-            value={classValues.intensityLevel}
+            name="intensity"
+            type='number'
+            value={classValues.intensity}
             onChange={handleChange}
             required = 'true'
           />
 
           <label>Location</label>
           <input className= 'form-item' 
-            className='form-item'
             id="location"
             name="location"
             type='text'
@@ -121,12 +116,22 @@ function AddClassForm({ addNewClass }) {
             required = 'true'
           />
 
+          <label>Registrants</label>
+          <input className= 'form-item'
+            id="registrants"
+            name="registrants"
+            type="number"
+            value={classValues.registrants}
+            onChange={handleChange}
+            required = 'true'
+          />  
+
           <label>Max Class Size</label>
           <input className= 'form-item'
             id="classLimit"
-            name="classLimit"
+            name="max_class_size"
             type="number"
-            value={classValues.classLimit}
+            value={classValues.max_class_size}
             onChange={handleChange}
             required = 'true'
           />

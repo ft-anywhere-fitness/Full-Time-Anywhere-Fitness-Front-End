@@ -8,6 +8,7 @@ import AddClassForm from "./components/AddClassForm";
 import Landing from "./components/Landing";
 import Footer from "./components/Footer";
 import Classes from "./components/Classes";
+import Class from "./components/Class";
 import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
 import Logout from "./components/Logout";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/signup" element={<SignUpForm />} />
         <Route path="/classes/add" element={<AddClassForm />} />
         <Route path="/classes" element={<Classes />} />
+        <Route path="/classes/:id" element={<Class />} />
         <Route path="/classes/class/edit/:id" element={<EditClassForm />} />
         <Route path="/logout" element={<Logout />} />
       </Routes>

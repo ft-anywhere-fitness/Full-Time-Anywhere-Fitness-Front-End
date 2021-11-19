@@ -7,7 +7,7 @@ const AxiosWithAuth = () => {
         headers: {
             authorization: token
         },
-        baseURL:'http://localhost:3000/api'
+        baseURL:'https://anywherefitnesslambda.herokuapp.com/'
     })
 }
 

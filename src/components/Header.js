@@ -19,6 +19,9 @@ export default function Header() {
         <NavLink className='header-nav-item underline' to='/classes'>
           View Classes
         </NavLink>
+        <NavLink className='header-nav-item underline' to='/logout'>
+          Logout
+        </NavLink>
       </nav>
     </header>
 

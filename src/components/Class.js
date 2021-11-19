@@ -18,6 +18,7 @@ const Class = (props) => {
 
   
   const navigate = useNavigate();
+  
   // const timeEmoji = time =>{
   //   let timeString = time.slice(0,3);
   //   return timeString;
@@ -26,7 +27,7 @@ const Class = (props) => {
   const handleClick = e  => {
     navigate(`/class/${class_id}`)
   }
-  
+
   //isFull() checks if the class is full, and returns a message saying it's full if so.
   const isFull= () =>{
     if(currentlyEnrolled >= classSizeLimit){

@@ -51,7 +51,6 @@ const EditClassForm = (props) => {
             .catch(err => {
                 console.log(err);
             })
-        
     };
 
     return (

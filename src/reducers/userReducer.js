@@ -1,47 +1,74 @@
 // Constants
 import {
-  FAILED_REGISTER,
   REGISTERING,
   SUCCESSFUL_REGISTER,
-  REGISTERED
+  FAILED_REGISTER,
+  REGISTERED,
+  LOGGING_IN,
+  SUCCESSFUL_LOGIN,
+  FAILED_LOGIN,
+  LOGOUT
 } from "../actions/userActions";
 
 // Initial State
 const initialState = {
   username: "",
-  email: "",
-  role_id: null,
-  auth: "",
+  user_id: null,
+  role_name: "",
+  registering: false,
   registerErrorMessage: "",
-  isRegistering: false,
-  registered: false
+  isRegistered: false,
+  loggingIn: false,
+  loginErrorMessage: "",
+  isLoggedIn: false,
 };
 
 // User Reducer
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case REGISTERED:
+    case REGISTERING:
       return {
         ...state,
-        registered: action.payload
+        registering: true
       };
     case SUCCESSFUL_REGISTER:
       return {
         ...state,
-        ...action.payload,
         registerErrorMessage: "",
-        isRegistering: false
-      };
-    case REGISTERING:
-      return {
-        ...state,
-        isRegistering: true
+        registering: false
       };
     case FAILED_REGISTER:
       return {
         ...state,
         registerErrorMessage: action.payload,
-        isRegistering: false
+        registering: false
+      };
+    case REGISTERED:
+      return {
+        ...state,
+        isRegistered: action.payload
+      };
+    case LOGGING_IN:
+      return {
+        ...state,
+        loggingIn: true
+      };
+    case SUCCESSFUL_LOGIN:
+      return {
+        ...state,
+        ...action.payload,
+        isLoggedIn: true,
+        loggingIn: false
+      };
+    case FAILED_LOGIN:
+      return {
+        ...state,
+        loggingIn: false
+      };
+    case LOGOUT:
+      return {
+        ...state,
+        isLoggedIn: false
       };
     default:
       return state;

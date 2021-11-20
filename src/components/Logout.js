@@ -1,5 +1,10 @@
+// Libraries
 import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
+
+// Actions
+import { logout } from "../actions/userActions";
 
 const Logout = () => {
   const navigate = useNavigate();
@@ -10,6 +15,7 @@ const Logout = () => {
 
   useEffect(() => {
     window.localStorage.removeItem('token');
+    logout();
     bye();
   });
   return (
@@ -17,4 +23,4 @@ const Logout = () => {
   );
 };
 
-export default Logout;
+export default connect(null, {})(Logout);

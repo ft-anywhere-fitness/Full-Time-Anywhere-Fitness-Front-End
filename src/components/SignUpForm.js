@@ -7,7 +7,12 @@ import { useNavigate } from "react-router-dom";
 import { signUp } from "../actions/userActions";
 
 const SignUpForm = (props) => {
-  const { registerErrorMessage, signUp, isRegistering, registered } = props;
+  const {
+    registerErrorMessage,
+    signUp,
+    isRegistering,
+    isRegistered
+  } = props;
   const navigate = useNavigate();
 
   // State Management
@@ -34,10 +39,10 @@ const SignUpForm = (props) => {
   };
 
   useEffect(() => {
-    if (registered) {
+    if (isRegistered === true) {
       navigate("/login");
     }
-  }, [registered]);
+  }, [isRegistered]);
 
   // Returned Component
   return (
@@ -107,7 +112,7 @@ const SignUpForm = (props) => {
         </label>
       }
       <br />
-      <button>Log In</button>
+      <button>Sign Up</button>
 
     </form>
   );
@@ -117,7 +122,7 @@ const mapStateToProps = (state) => {
   return {
     registerErrorMessage: state.user.registerErrorMessage,
     isRegistering: state.user.isRegistering,
-    registered: state.user.registered
+    isRegistered: state.user.isRegistered
   };
 };
 

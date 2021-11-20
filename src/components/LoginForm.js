@@ -1,9 +1,14 @@
 // Libraries
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const LoginForm = () => {
+// Actions
+import { login, registered } from "./../actions/userActions";
+
+const LoginForm = (props) => {
+  const { login, isLoggedIn, registered, loggingIn } = props;
+
   // State Management
   const [credentials, setCredentials] = useState({
     "username": "",
@@ -23,21 +28,23 @@ const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios
-      .post("https://anywherefitnesslambda.herokuapp.com/api/auth/login", credentials)
-      .then((response) => {
-        console.log(response.data.token);
-        window.localStorage.setItem("token", response.data.token);
-        navigate("/classes");
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    login(credentials);
   };
+
+  useEffect(() => {
+    if (isLoggedIn === true) {
+      navigate("/classes");
+    }
+  }, [isLoggedIn]);
+
+  useEffect(() => {
+    registered(false);
+  }, []);
 
   // Returned Component
   return (
     <form onSubmit={handleSubmit}>
+      {loggingIn === true && <h3>Logging in...</h3>}
       <label>
         Username:
         <input
@@ -63,5 +70,12 @@ const LoginForm = () => {
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    loggingIn: state.user.loggingIn,
+    loginErrorMessage: state.user.loginErrorMessage,
+    isLoggedIn: state.user.isLoggedIn
+  };
+};
 
-export default LoginForm;
+export default connect(mapStateToProps, { login, registered })(LoginForm);

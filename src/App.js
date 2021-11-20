@@ -1,6 +1,9 @@
 // Libraries
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+
+// Actions
+import { loggedIn } from "./actions/userActions";
 
 // Components
 import Header from "./components/Header";
@@ -13,9 +16,15 @@ import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
 import Logout from "./components/Logout";
 import EditClassForm from "./components/EditClassForm";
+import { connect } from "react-redux";
 
 // Returned Component
 function App() {
+  useEffect(() => {
+    if (window.localStorage.getItem("token")) {
+      loggedIn(true);
+    }
+  }, []);
   return (
     <div className="app">
       <Header />
@@ -34,4 +43,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(null)(App);

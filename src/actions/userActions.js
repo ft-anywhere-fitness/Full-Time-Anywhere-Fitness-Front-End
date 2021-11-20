@@ -5,7 +5,7 @@ import axios from "axios";
 export const LOGGING_IN = "LOGGING_IN";
 export const SUCCESSFUL_LOGIN = "SUCCESSFUL_LOGIN";
 export const FAILED_LOGIN = "FAILED_LOGIN";
-export const LOGOUT = "LOGOUT";
+export const LOGGED_IN = "LOGGED_IN";
 export const REGISTERING = "REGISTERING";
 export const SUCCESSFUL_REGISTER = "SUCCESSFUL_REGISTER";
 export const FAILED_REGISTER = "FAILED_REGISTER";
@@ -32,16 +32,16 @@ export const loggingIn = () => {
   return { type: LOGGING_IN };
 };
 
-export const successfulLogin = (credentials) => {
-  return { type: SUCCESSFUL_LOGIN, payload: credentials };
+export const successfulLogin = (userData) => {
+  return { type: SUCCESSFUL_LOGIN, payload: userData };
 };
 
 export const failedLogin = (errorMessage) => {
   return { type: FAILED_LOGIN, payload: errorMessage };
 };
 
-export const logout = () => {
-  return { type: LOGOUT };
+export const loggedIn = (boolean) => {
+  return { type: LOGGED_IN, payload: boolean };
 };
 
 export const signUp = (credentials) => (dispatch) => {
@@ -65,8 +65,12 @@ export const login = (credentials) => (dispatch) => {
       window.localStorage.setItem("token", response.data.token);
       axios.get("https://anywherefitnesslambda.herokuapp.com/api/users")
         .then((response) => {
-          const userData = response.data.find((user) => user.username === credentials.username);
+          const userData = response.data
+            .find((user) => {
+              return user.username === credentials.username;
+            });
           dispatch(successfulLogin(userData));
+          dispatch(loggedIn(true));
         })
         .catch((error) => {
           console.error("Failed to update user state with server data", error);

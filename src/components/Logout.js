@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 // Actions
-import { logout } from "../actions/userActions";
+import { loggedIn } from "../actions/userActions";
 
 const Logout = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Logout = () => {
 
   useEffect(() => {
     window.localStorage.removeItem('token');
-    logout();
+    loggedIn(false);
     bye();
   });
   return (
@@ -23,4 +23,4 @@ const Logout = () => {
   );
 };
 
-export default connect(null, {})(Logout);
+export default connect(null, { loggedIn })(Logout);

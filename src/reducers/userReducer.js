@@ -7,12 +7,13 @@ import {
   LOGGING_IN,
   SUCCESSFUL_LOGIN,
   FAILED_LOGIN,
-  LOGOUT
+  LOGGED_IN
 } from "../actions/userActions";
 
 // Initial State
 const initialState = {
   username: "",
+  email: "",
   user_id: null,
   role_name: "",
   registering: false,
@@ -56,7 +57,10 @@ const userReducer = (state = initialState, action) => {
     case SUCCESSFUL_LOGIN:
       return {
         ...state,
-        ...action.payload,
+        username: action.payload.username,
+        email: action.payload.email,
+        user_id: action.payload.user_id,
+        role_name: action.payload.role_name,
         isLoggedIn: true,
         loggingIn: false
       };
@@ -65,7 +69,7 @@ const userReducer = (state = initialState, action) => {
         ...state,
         loggingIn: false
       };
-    case LOGOUT:
+    case LOGGED_IN:
       return {
         ...state,
         isLoggedIn: false

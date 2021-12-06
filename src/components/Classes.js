@@ -6,7 +6,7 @@ import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import { Card, CardMedia } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Class from "./Class";
+import ClassDetails from "./ClassDetails";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -22,7 +22,7 @@ function Classes() {
     axios
       .get("https://anywherefitnesslambda.herokuapp.com/api/classes")
       .then((resp) => {
-        setClassList(resp);
+        setClassList(resp.data);
         console.log(classList);
       })
       .catch((err) => {
@@ -39,7 +39,7 @@ function Classes() {
         alignItems="center"
       >
         {classList.map((item) => {
-          return <Class class={item} />;
+          return <ClassDetails cl={item} />;
         })}
       </Grid>
     </div>

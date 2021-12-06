@@ -22,7 +22,13 @@ const Navbar = (props) => {
                 variant="outlined"
                 aria-label="outlined button group"
               >
-                <Button variant="outlined" size="large" color="inherit">
+                <Button
+                  component={Link}
+                  to={"/"}
+                  variant="outlined"
+                  size="large"
+                  color="inherit"
+                >
                   Home
                 </Button>
                 <Button size="large" variant="outlined" color="inherit">

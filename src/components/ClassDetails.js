@@ -12,7 +12,7 @@ function ClassDetails(props) {
       <Card>
         <CardContent>
           <Typography color="inherit" variant="">
-            {cl.name}
+            name: {cl.name}
             <br></br>
             class id: {cl.class_id}
             <br></br>
@@ -20,13 +20,13 @@ function ClassDetails(props) {
             <br></br>
             duration: {cl.duration}
             <br></br>
-            {cl.intensity}
+            intenseity level(out of 10): {cl.intensity}
             <br></br>
-            {cl.location}
+            location: {cl.location}
             <br></br>
-            {cl.max_class_size}
+            max_class_size: {cl.max_class_size}
             <br></br>
-            {cl.class_type_name}
+            class_type: {cl.class_type_name}
           </Typography>
         </CardContent>
       </Card>

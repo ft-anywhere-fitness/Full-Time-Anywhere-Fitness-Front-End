@@ -34,7 +34,12 @@ const Navbar = (props) => {
                 <Button size="large" variant="outlined" color="inherit">
                   Login
                 </Button>
-                <Button size="large" color="inherit">
+                <Button
+                  size="large"
+                  component={Link}
+                  to={"/register"}
+                  color="inherit"
+                >
                   Register
                 </Button>
                 <Button

@@ -6,6 +6,7 @@ import NavBar from "./components/Navbar.js";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import Homepage from "./components/Homepage";
 import Classes from "./components/Classes";
+import Register from "./components/Register";
 
 const lightTheme = createTheme({ palette: { mode: "light" } });
 
@@ -26,6 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/classes" element={<Classes />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </ThemeProvider>
     </div>

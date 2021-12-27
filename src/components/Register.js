@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
-import Input from "@mui/material/Input";
-import FilledInput from "@mui/material/FilledInput";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
-import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import { Button, Paper } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
@@ -16,13 +12,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
-
-/*4. role_id
-1. "1" - client
-2. "2" - instructor
-*/
-
-/* how to set role_id from the select menu */
+import axios from "axios";
 
 const initialFormValues = {
   role_id: undefined,
@@ -60,6 +50,27 @@ function Register(props) {
     });
   };
 
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const resp = await axios.post(
+        "https://anywherefitnesslambda.herokuapp.com/api/auth/register",
+        {
+          role_id: formValues.role_id,
+          name: formValues.name,
+          username: formValues.name,
+          password: formValues.password,
+          email: formValues.password,
+          auth: formValues.auth,
+        }
+      );
+      console.log(resp);
+      history.push("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     if (formValues.role_id === 2) {
       setFormValues({ ...formValues, authPasswordRender: true });
@@ -69,13 +80,6 @@ function Register(props) {
     }
     console.log(formValues);
   }, [formValues.role_id]);
-
-  // const handleRoleSelect = (event) => {
-  //   useEffect(() => {
-  //     setFormValues({ ...formValues, role_id: event.target.value });
-  //   }, [setFormValues]);
-  // };
-  // console.log(formValues);
 
   const handleClickShowPassword = () => {
     setFormValues({
@@ -94,8 +98,6 @@ function Register(props) {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-
-  // const handleSubmit =
 
   return (
     <div>
@@ -119,7 +121,6 @@ function Register(props) {
           direction="row"
           justifyContent="space-around"
           alignItems="center"
-          // sx={{ border: "1px solid red" }}
         >
           <Paper
             elevation={15}
@@ -127,8 +128,6 @@ function Register(props) {
               display: "flex",
               flexDirection: "column",
               padding: "5%",
-              // border: "1px solid red",
-              // width: "50%",
             }}
           >
             <TextField
@@ -244,6 +243,7 @@ function Register(props) {
               variant="outlined"
               size="large"
               color="inherit"
+              onClick={handleSubmit}
             >
               Submit
             </Button>

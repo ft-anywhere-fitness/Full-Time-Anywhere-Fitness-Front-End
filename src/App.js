@@ -7,6 +7,7 @@ import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import Homepage from "./components/Homepage";
 import Classes from "./components/Classes";
 import Register from "./components/Register";
+import Login from "./components/Login";
 
 const lightTheme = createTheme({ palette: { mode: "light" } });
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/classes" element={<Classes />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </ThemeProvider>
     </div>

@@ -27,7 +27,7 @@ const initialFormValues = {
 
 function Login(props) {
   const [formValues, setFormValues] = useState(initialFormValues);
-
+  const { isLoggedIn } = props;
   let { push } = useNavigate();
 
   const handleChange = (prop) => (event) => {
@@ -37,33 +37,33 @@ function Login(props) {
     });
   };
 
-  //   const handleSubmit = async (e) => {
-  //     try {
-  //       e.preventDefault();
-  //       const resp = await axios.post(
-  //         "https://anywherefitnesslambda.herokuapp.com/api/auth/login",
-  //         formValues
-  //       );
-  //       const token = await resp.data.token;
-  //       localStorage.setItem("token", token);
-  //       console.log(resp);
-  //     } catch (error) {
-  //       console.log(error.response);
-  //     }
-  //   };
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    axiosWithAuth()
-      .post(
+    // e.preventDefault();
+    // axiosWithAuth()
+    //   .post(
+    //     "https://anywherefitnesslambda.herokuapp.com/api/auth/login",
+    //     formValues
+    //   )
+    //   .then((resp) => {
+    //     localStorage.setItem("token", resp.data.token);
+    //     console.log(resp);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err.response);
+    //   });
+
+    try {
+      e.preventDefault();
+
+      const resp = await axiosWithAuth().post(
         "https://anywherefitnesslambda.herokuapp.com/api/auth/login",
         formValues
-      )
-      .then((resp) => {
-        localStorage.setItem("token", resp.data.token);
-      })
-      .catch((err) => {
-        console.log(err.response);
-      });
+      );
+      localStorage.setItem("token", resp.data.token);
+      console.log(resp);
+    } catch (error) {
+      console.log(error.response);
+    }
   };
 
   const handleClickShowPassword = () => {

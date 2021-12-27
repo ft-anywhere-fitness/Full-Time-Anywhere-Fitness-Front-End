@@ -2,11 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { AppBar, Paper, Toolbar } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 import { Typography } from "@mui/material";
 import { ButtonGroup } from "@mui/material";
 
 const Navbar = (props) => {
+  const navigate = useNavigate();
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    navigate("/");
+  };
   return (
     <AppBar
       elevation={3}
@@ -50,6 +58,9 @@ const Navbar = (props) => {
               color="inherit"
             >
               View Classes
+            </Button>
+            <Button onClick={handleLogout} size="large" color="inherit">
+              Logout
             </Button>
           </ButtonGroup>
         </div>

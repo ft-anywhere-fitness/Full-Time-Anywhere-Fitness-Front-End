@@ -41,7 +41,7 @@ const accountTypes = [
 function Register(props) {
   const [formValues, setFormValues] = useState(initialFormValues);
 
-  let history = useNavigate();
+  let navigate = useNavigate();
 
   const handleChange = (prop) => (event) => {
     setFormValues({
@@ -58,16 +58,16 @@ function Register(props) {
         {
           role_id: formValues.role_id,
           name: formValues.name,
-          username: formValues.name,
+          username: formValues.username,
           password: formValues.password,
-          email: formValues.password,
+          email: formValues.email,
           auth: formValues.auth,
         }
       );
       console.log(resp);
-      history.push("/login");
+      navigate("/login");
     } catch (error) {
-      console.log(error);
+      console.log(error.response);
     }
   };
 

@@ -12,6 +12,7 @@ import Login from "./components/Login";
 const lightTheme = createTheme({ palette: { mode: "light" } });
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   /* Use this to have conditional button rendering for logout feature*/
   // useEffect(() => {
   //   if (localStorage.getItem("token")) {
@@ -29,7 +30,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/classes" element={<Classes />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login isLoggedIn={isLoggedIn} />} />
         </Routes>
       </ThemeProvider>
     </div>

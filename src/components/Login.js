@@ -27,7 +27,7 @@ const initialFormValues = {
 
 function Login(props) {
   const [formValues, setFormValues] = useState(initialFormValues);
-  const { isLoggedIn } = props;
+  const { isLoggedIn, setIsLoggedIn } = props;
   let { push } = useNavigate();
 
   const handleChange = (prop) => (event) => {
@@ -38,20 +38,6 @@ function Login(props) {
   };
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-    // axiosWithAuth()
-    //   .post(
-    //     "https://anywherefitnesslambda.herokuapp.com/api/auth/login",
-    //     formValues
-    //   )
-    //   .then((resp) => {
-    //     localStorage.setItem("token", resp.data.token);
-    //     console.log(resp);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err.response);
-    //   });
-
     try {
       e.preventDefault();
 
@@ -60,7 +46,7 @@ function Login(props) {
         formValues
       );
       localStorage.setItem("token", resp.data.token);
-      console.log(resp);
+      setIsLoggedIn(true);
     } catch (error) {
       console.log(error.response);
     }

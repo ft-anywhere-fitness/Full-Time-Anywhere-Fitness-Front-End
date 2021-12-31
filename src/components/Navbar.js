@@ -8,12 +8,14 @@ import { Typography } from "@mui/material";
 import { ButtonGroup } from "@mui/material";
 
 const Navbar = (props) => {
+  const { isLoggedIn, setIsLoggedIn } = props;
   const navigate = useNavigate();
 
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.removeItem("token");
     navigate("/");
+    setIsLoggedIn(false);
   };
   return (
     <AppBar

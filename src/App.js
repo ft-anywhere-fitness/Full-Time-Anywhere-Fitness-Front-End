@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={lightTheme}>
-        <NavBar />
+        <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route
@@ -39,7 +39,12 @@ function App() {
             }
           />
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login isLoggedIn={isLoggedIn} />} />
+          <Route
+            path="/login"
+            element={
+              <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+            }
+          />
           <Route
             path="/dashboard"
             element={

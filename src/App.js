@@ -8,6 +8,8 @@ import Homepage from "./components/Homepage";
 import Classes from "./components/Classes";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import PrivateRoute from "./components/PrivateRoute";
+import Dashboard from "./components/Dashboard";
 
 const lightTheme = createTheme({ palette: { mode: "light" } });
 
@@ -28,9 +30,24 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/classes" element={<Classes />} />
+          <Route
+            path="/classes"
+            element={
+              <PrivateRoute>
+                <Classes />
+              </PrivateRoute>
+            }
+          />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login isLoggedIn={isLoggedIn} />} />
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
         </Routes>
       </ThemeProvider>
     </div>

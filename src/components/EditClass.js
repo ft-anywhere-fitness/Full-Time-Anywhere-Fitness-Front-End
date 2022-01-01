@@ -4,12 +4,10 @@ import RegistrantList from "./RegistrantList";
 import { Paper } from "@mui/material";
 import { Box } from "@mui/system";
 
-const Dashboard = (props) => {
+const EditClass = (props) => {
   return (
     <div>
       <RegistrantList />
     </div>
   );
 };
-
-export default Dashboard;

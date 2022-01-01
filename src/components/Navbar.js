@@ -26,45 +26,87 @@ const Navbar = (props) => {
     >
       <Toolbar>
         <div className="btngrp">
-          <ButtonGroup variant="outlined" aria-label="outlined button group">
-            <Button
-              component={Link}
-              to={"/"}
-              variant="outlined"
-              size="large"
-              color="inherit"
-            >
-              Home
-            </Button>
-            <Button
-              size="large"
-              variant="outlined"
-              component={Link}
-              to={"/Login"}
-              color="inherit"
-            >
-              Login
-            </Button>
-            <Button
-              size="large"
-              component={Link}
-              to={"/register"}
-              color="inherit"
-            >
-              Register
-            </Button>
-            <Button
-              component={Link}
-              to={"/classes"}
-              size="large"
-              color="inherit"
-            >
-              View Classes
-            </Button>
-            <Button onClick={handleLogout} size="large" color="inherit">
-              Logout
-            </Button>
-          </ButtonGroup>
+          {isLoggedIn ? (
+            <ButtonGroup variant="outlined" aria-label="outlined button group">
+              <Button
+                component={Link}
+                to={"/dashboard"}
+                variant="outlined"
+                size="large"
+                color="inherit"
+              >
+                Dashboard
+              </Button>
+              <Button
+                size="large"
+                variant="outlined"
+                // component={Link}
+                // to={"/Login"}
+                color="inherit"
+              >
+                My Classes
+              </Button>
+              <Button
+                size="large"
+                // component={Link}
+                // to={"/register"}
+                color="inherit"
+              >
+                Add Class
+              </Button>
+              <Button
+                component={Link}
+                to={"/classes"}
+                size="large"
+                color="inherit"
+              >
+                Upcoming Classes
+              </Button>
+              <Button onClick={handleLogout} size="large" color="inherit">
+                Logout
+              </Button>
+            </ButtonGroup>
+          ) : (
+            <ButtonGroup variant="outlined" aria-label="outlined button group">
+              <Button
+                component={Link}
+                to={"/"}
+                variant="outlined"
+                size="large"
+                color="inherit"
+              >
+                Home
+              </Button>
+              <Button
+                size="large"
+                variant="outlined"
+                component={Link}
+                to={"/Login"}
+                color="inherit"
+              >
+                Login
+              </Button>
+              <Button
+                size="large"
+                component={Link}
+                to={"/register"}
+                color="inherit"
+              >
+                Register
+              </Button>
+              <Button
+                component={Link}
+                to={"/classes"}
+                size="large"
+                color="inherit"
+              >
+                View Classes
+              </Button>
+              <Button onClick={handleLogout} size="large" color="inherit">
+                Logout
+              </Button>
+            </ButtonGroup>
+          )}
         </div>
       </Toolbar>
     </AppBar>

@@ -307,7 +307,6 @@ export default function RegistrantList() {
           control={<Switch checked={dense} onChange={handleChangeDense} />}
           label="Dense padding"
         />
-        <Button onClick={handleTest}>test</Button>
       </Box>
     </Paper>
   );

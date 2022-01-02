@@ -48,8 +48,8 @@ const Navbar = (props) => {
               </Button>
               <Button
                 size="large"
-                // component={Link}
-                // to={"/register"}
+                component={Link}
+                to={"/add-class"}
                 color="inherit"
               >
                 Add Class

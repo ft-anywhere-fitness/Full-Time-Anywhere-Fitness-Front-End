@@ -10,6 +10,8 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./components/Dashboard";
+import { AddCard } from "@mui/icons-material";
+import AddClass from "./components/AddClass";
 
 const lightTheme = createTheme({ palette: { mode: "light" } });
 
@@ -50,6 +52,14 @@ function App() {
             element={
               <PrivateRoute>
                 <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/add-class"
+            element={
+              <PrivateRoute>
+                <AddClass />
               </PrivateRoute>
             }
           />

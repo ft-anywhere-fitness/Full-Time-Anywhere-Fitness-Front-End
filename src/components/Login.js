@@ -47,6 +47,7 @@ function Login(props) {
       localStorage.setItem("token", resp.data.token);
       setIsLoggedIn(true);
       navigate("/dashboard");
+      console.log(resp);
     } catch (error) {
       console.log(error);
     }

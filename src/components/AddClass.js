@@ -1,74 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
-import IconButton from "@mui/material/IconButton";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormControl from "@mui/material/FormControl";
 import { Button, Paper } from "@mui/material";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
-import MenuItem from "@mui/material/MenuItem";
-import axios from "axios";
 import { axiosWithAuth } from "../utils/AxiosWithAuth";
-
-// "class_id": 2,
-//     "name": "daniel1",
-//     "location": "abc street",
-//     "class_type_name": "zumba",
-//     "start_time": "10:00 PM",
-//     "duration": "02:00:00",
-//     "intensity": 8,
-//     "max_class_size": 20,
-//     "registrants": 6,
-//     "instructor": {
-//         "user_id": 3,
-//         "username": "daniel3",
-//         "email": "hij@789.com",
-//         "role_name": "instructor",
-//         "name": "daniel3"
-//     },
-//     "registrant_list": [
-//         {
-//             "name": "daniel1",
-//             "role_name": "client",
-//             "user_id": 1,
-//             "username": "daniel1",
-//             "email": "abc@123.com"
-//         },
-//         {
-//             "name": "daniel2",
-//             "role_name": "client",
-//             "user_id": 2,
-//             "username": "daniel2",
-//             "email": "def@456.com"
-//         },
-//         {
-//             "name": "daniel2",
-//             "role_name": "client",
-//             "user_id": 2,
-//             "username": "daniel2",
-//             "email": "def@456.com"
-//         },
-//         {
-//             "name": "daniel2",
-//             "role_name": "client",
-//             "user_id": 2,
-//             "username": "daniel2",
-//             "email": "def@456.com"
-//         },
-//         {
-//             "name": "daniel2",
-//             "role_name": "client",
-//             "user_id": 2,
-//             "username": "daniel2",
-//             "email": "def@456.com"
-//         }
-//     ]
-// }
 
 const initialFormValues = {
   name: "",

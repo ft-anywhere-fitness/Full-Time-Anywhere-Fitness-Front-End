@@ -5,6 +5,11 @@ import { Button, Paper } from "@mui/material";
 import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import { axiosWithAuth } from "../utils/AxiosWithAuth";
+import isWeekend from "date-fns/isWeekend";
+
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import StaticDatePicker from "@mui/lab/StaticDatePicker";
 
 const initialFormValues = {
   name: "",
@@ -18,6 +23,7 @@ const initialFormValues = {
 
 function AddClass(props) {
   const [formValues, setFormValues] = useState(initialFormValues);
+  const [value, setValue] = useState(null);
 
   let navigate = useNavigate();
 
@@ -43,28 +49,42 @@ function AddClass(props) {
   };
 
   return (
-    <div>
-      <Paper
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          height: "100vh",
-        }}
+    <Paper
+      sx={{
+        height: "100vh",
+      }}
+    >
+      <Typography
+        variant="h2"
+        color="inherit"
+        gutterBottom
+        sx={{ marginTop: "3%", marginBottom: "3%" }}
+        gutterBottom
       >
-        <Typography
-          variant="h2"
-          color="inherit"
-          gutterBottom
-          sx={{ marginTop: "3%" }}
-        >
-          Add new class
-        </Typography>
-        <Grid
-          container
-          direction="row"
-          justifyContent="space-around"
-          alignItems="center"
-        >
+        Add new class
+      </Typography>
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        sx={{ display: "flex" }}
+      >
+        <Grid item xs={6}>
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <StaticDatePicker
+              orientation="landscape"
+              openTo="day"
+              value={value}
+              onChange={(newValue) => {
+                setValue(newValue);
+              }}
+              renderInput={(params) => <TextField {...params} />}
+            />
+          </LocalizationProvider>
+        </Grid>
+
+        <Grid item xs={6} sx={{ paddingRight: "2%" }}>
           <Paper
             elevation={15}
             sx={{
@@ -131,8 +151,9 @@ function AddClass(props) {
             </Button>
           </Paper>
         </Grid>
-      </Paper>
-    </div>
+        {/* </Paper> */}
+      </Grid>
+    </Paper>
   );
 }
 export default AddClass;

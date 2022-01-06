@@ -11,6 +11,8 @@ const Navbar = (props) => {
   const { isLoggedIn, setIsLoggedIn } = props;
   const navigate = useNavigate();
 
+  let token = localStorage.getItem("token");
+
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.removeItem("token");
@@ -26,7 +28,7 @@ const Navbar = (props) => {
     >
       <Toolbar>
         <div className="btngrp">
-          {isLoggedIn ? (
+          {token ? (
             <ButtonGroup variant="outlined" aria-label="outlined button group">
               <Button
                 component={Link}

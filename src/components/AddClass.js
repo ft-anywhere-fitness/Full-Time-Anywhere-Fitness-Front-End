@@ -6,10 +6,11 @@ import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import { axiosWithAuth } from "../utils/AxiosWithAuth";
 import isWeekend from "date-fns/isWeekend";
-
+import { TimePicker } from "@mui/lab";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import StaticDatePicker from "@mui/lab/StaticDatePicker";
+import ClassForm from "./ClassForm";
 
 const initialFormValues = {
   name: "",
@@ -24,6 +25,7 @@ const initialFormValues = {
 function AddClass(props) {
   const [formValues, setFormValues] = useState(initialFormValues);
   const [value, setValue] = useState(null);
+  const [timeValue, setTimeValue] = useState(null);
 
   let navigate = useNavigate();
 
@@ -63,96 +65,7 @@ function AddClass(props) {
       >
         Add new class
       </Typography>
-      <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-        sx={{ display: "flex" }}
-      >
-        <Grid item xs={6}>
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <StaticDatePicker
-              orientation="landscape"
-              openTo="day"
-              value={value}
-              onChange={(newValue) => {
-                setValue(newValue);
-              }}
-              renderInput={(params) => <TextField {...params} />}
-            />
-          </LocalizationProvider>
-        </Grid>
-
-        <Grid item xs={6} sx={{ paddingRight: "2%" }}>
-          <Paper
-            elevation={15}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              padding: "5%",
-            }}
-          >
-            <TextField
-              required
-              id="name"
-              label="Class Name"
-              variant="outlined"
-              name="name"
-              sx={{ marginTop: "2.25%" }}
-              onChange={handleChange("name")}
-            />
-            <TextField
-              required
-              id="locaiton"
-              label="Location"
-              variant="outlined"
-              name="location"
-              sx={{ marginTop: "2%", marginBottom: "2%" }}
-              onChange={handleChange("location")}
-            />
-
-            <TextField
-              required
-              id="class_type"
-              label="Class Type"
-              variant="outlined"
-              name="class_type_name"
-              onChange={handleChange("class_type_name")}
-            />
-            <TextField
-              required
-              id="intensity"
-              label="Intensity (out of 10)"
-              variant="outlined"
-              name="intensity"
-              sx={{ marginTop: "2.25%" }}
-              onChange={handleChange("intensity")}
-            />
-            <TextField
-              required
-              id="class_type"
-              label="Class Type"
-              variant="outlined"
-              name="class_type_name"
-              sx={{ marginTop: "2.25%" }}
-              onChange={handleChange("class_type_name")}
-            />
-
-            <Button
-              sx={{ marginTop: "5%" }}
-              type="submit"
-              variant="outlined"
-              size="large"
-              color="inherit"
-              onClick={handleSubmit}
-            >
-              Submit
-            </Button>
-          </Paper>
-        </Grid>
-        {/* </Paper> */}
-      </Grid>
+      <ClassForm />
     </Paper>
   );
 }

@@ -15,14 +15,13 @@ const EditClass = (props) => {
       <Grid
         container
         direction="row"
-        justifyContent="center"
-        alignItems="center"
-        sx={{ display: "flex" }}
+        justifyContent="space-evenly"
+        alignItems="flex-start"
       >
-        <Grid item xs={6}>
+        <Grid item xs={5}>
           <ClassForm />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={7}>
           <RegistrantList />
         </Grid>
       </Grid>

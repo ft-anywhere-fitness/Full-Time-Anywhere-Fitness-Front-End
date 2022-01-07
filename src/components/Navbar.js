@@ -16,7 +16,6 @@ const Navbar = () => {
     e.preventDefault();
     localStorage.removeItem("token");
     navigate("/");
-    setIsLoggedIn(false);
   };
   return (
     <AppBar

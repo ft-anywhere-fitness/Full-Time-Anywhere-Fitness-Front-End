@@ -9,11 +9,12 @@ import { axiosWithAuth } from "../utils/AxiosWithAuth";
 import { TimePicker } from "@mui/lab";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import StaticDatePicker from "@mui/lab/StaticDatePicker";
+import { DateTimePicker } from "@mui/lab";
 
 const initialFormValues = {
   name: "",
   location: "",
+  date: "",
   class_type_name: "",
   start_time: "",
   duration: "",
@@ -21,12 +22,13 @@ const initialFormValues = {
   max_class_size: null,
 };
 
+//timepicker: Fri Jan 07 2022 14:15:00 GMT+0700 (Indochina Time)
+
 function ClassForm(props) {
   const [formValues, setFormValues] = !props
     ? useState(initialFormValues)
     : useState(props);
-  const [value, setValue] = useState(null);
-  const [timeValue, setTimeValue] = useState(null);
+  const [dateTimeValue, setDateTimeValue] = useState(new Date());
 
   let navigate = useNavigate();
 
@@ -40,14 +42,18 @@ function ClassForm(props) {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
+      let time = dateTimeValue;
+      console.log(typeof time);
+      let _time = time.slice(4, 14);
       const resp = await axiosWithAuth().post(
         "https://anywherefitnesslambda.herokuapp.com/api/classes/",
         formValues
       );
+      console.log(_time);
       console.log(resp);
       navigate("/dashboard");
     } catch (error) {
-      console.log(error.response);
+      console.log(error);
     }
   };
 
@@ -59,26 +65,12 @@ function ClassForm(props) {
     >
       <Grid
         container
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-        sx={{ display: "flex" }}
+        // direction="row"
+        // justifyContent="center"
+        // alignItems="center"
+        // sx={{ display: "flex" }}
       >
-        <Grid item xs={6}>
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <StaticDatePicker
-              orientation="landscape"
-              openTo="day"
-              value={value}
-              onChange={(newValue) => {
-                setValue(newValue);
-              }}
-              renderInput={(params) => <TextField {...params} />}
-            />
-          </LocalizationProvider>
-        </Grid>
-
-        <Grid item xs={6} sx={{ paddingRight: "2%" }}>
+        <Grid item xs={12} sx={{ paddingLeft: "3.5%", paddingRight: "3.5%" }}>
           <Paper
             elevation={15}
             sx={{
@@ -96,18 +88,17 @@ function ClassForm(props) {
               sx={{ marginTop: "2.25%", marginBottom: "2.25%" }}
               onChange={handleChange("name")}
             />
-            <LocalizationProvider required dateAdapter={AdapterDateFns}>
-              <TimePicker
-                required
-                sx={{ marginTop: "2.25%" }}
-                label="Start Time"
-                value={timeValue}
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DateTimePicker
+                renderInput={(props) => <TextField {...props} />}
+                label="DateTimePicker"
+                value={dateTimeValue}
                 onChange={(newValue) => {
-                  setValue(newValue);
+                  setDateTimeValue(newValue);
                 }}
-                renderInput={(params) => <TextField {...params} />}
               />
             </LocalizationProvider>
+
             <TextField
               required
               id="duration"

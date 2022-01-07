@@ -160,7 +160,6 @@ export default function RegistrantList() {
       );
       counter += 1;
       setRows(resp.data.registrant_list);
-      console.log(counter);
     } catch (error) {
       console.log(error);
     }
@@ -222,12 +221,12 @@ export default function RegistrantList() {
     <Paper
       sx={{
         height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        padding: "2%",
+        // display: "flex",
+        paddingLeft: "2%",
+        paddingRight: "2%",
       }}
     >
-      <Box sx={{ width: "80%" }}>
+      <Box sx={{ width: "100%" }}>
         <Paper elevation={21} sx={{ width: "100%", mb: 2 }}>
           <EnhancedTableToolbar numSelected={selected.length} />
           <TableContainer>

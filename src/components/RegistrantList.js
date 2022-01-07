@@ -151,6 +151,7 @@ export default function RegistrantList() {
   const [test, setTest] = useState(false);
   let counter = 0;
 
+  //use this to make axios call to back end to get new list of registrants after deleting a user
   useEffect(async () => {
     try {
       //hard coding classID for now, this will come from params later
@@ -163,7 +164,7 @@ export default function RegistrantList() {
     } catch (error) {
       console.log(error);
     }
-  }, [test]);
+  }, []);
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {

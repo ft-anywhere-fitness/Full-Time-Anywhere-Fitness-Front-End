@@ -7,8 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
 import { ButtonGroup } from "@mui/material";
 
-const Navbar = (props) => {
-  const { isLoggedIn, setIsLoggedIn } = props;
+const Navbar = () => {
   const navigate = useNavigate();
 
   let token = localStorage.getItem("token");

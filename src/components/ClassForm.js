@@ -5,7 +5,7 @@ import { Button, Paper } from "@mui/material";
 import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import { axiosWithAuth } from "../utils/AxiosWithAuth";
-import isWeekend from "date-fns/isWeekend";
+
 import { TimePicker } from "@mui/lab";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
@@ -166,9 +166,9 @@ function ClassForm(props) {
             </Button>
           </Paper>
         </Grid>
-        {/* </Paper> */}
       </Grid>
     </Paper>
   );
 }
+
 export default ClassForm;

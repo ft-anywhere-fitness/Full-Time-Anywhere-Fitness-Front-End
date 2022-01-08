@@ -13,6 +13,7 @@ import Dashboard from "./components/Dashboard";
 import { AddCard } from "@mui/icons-material";
 import AddClass from "./components/AddClass";
 import EditClass from "./components/EditClass";
+import ClassInfo from "./components/ClassInfo";
 
 const lightTheme = createTheme({ palette: { mode: "light" } });
 
@@ -69,6 +70,14 @@ function App() {
             element={
               <PrivateRoute>
                 <EditClass />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/classes/:class_id"
+            element={
+              <PrivateRoute>
+                <ClassInfo />
               </PrivateRoute>
             }
           />

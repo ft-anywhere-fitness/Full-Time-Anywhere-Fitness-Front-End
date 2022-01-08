@@ -3,15 +3,16 @@ import { Card } from "@mui/material";
 import { CardContent } from "@mui/material";
 import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { axiosWithAuth } from "../utils/AxiosWithAuth";
 
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import ClassInfo from "./ClassInfo";
 
 function ClassDetails(props) {
   const navigate = useNavigate();
   const { cl } = props;
-  const [deets, setDeets] = useState();
+  const [deets, setDeets] = useState({});
   const [renderDeets, setRenderDeets] = useState(false);
 
   const routeToClass = async (e) => {
@@ -20,16 +21,19 @@ function ClassDetails(props) {
       const resp = await axiosWithAuth().get(
         `https://anywherefitnesslambda.herokuapp.com/api/classes/${cl.class_id}`
       );
-      setDeets(resp.data);
+      console.log(resp);
+      console.log(cl.class_id);
+      navigate(`/classes/${resp.data.class_id}`);
+      <ClassInfo classInfo={resp.data} />;
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data);
     }
   };
 
   return (
     <Grid item xs={3} padding="1%">
       <Card elevation={12}>
-        <CardActionArea>
+        <CardActionArea onClick={routeToClass}>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {cl.name}

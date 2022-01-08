@@ -67,7 +67,7 @@ function Register(props) {
       console.log(resp);
       navigate("/login");
     } catch (error) {
-      console.log(error.response);
+      console.log(error);
     }
   };
 

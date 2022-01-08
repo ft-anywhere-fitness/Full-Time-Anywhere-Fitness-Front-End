@@ -30,3 +30,5 @@ const EditClass = (props) => {
 };
 
 export default EditClass;
+
+// insert into "classes" ("class_type_id", "duration", "instructor_user_id", "intensity", "location", "max_class_size", "name", "registrants", "start_time") values ($1, $2, $3, $4, $5, $6, $7, DEFAULT, $8) returning "class_type_id", "start_time", "duration", "intensity", "location", "registrants", "max_class_size" - null value in column "date" of relation "classes" violates not-null constraint

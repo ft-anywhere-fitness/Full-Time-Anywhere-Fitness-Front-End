@@ -6,7 +6,6 @@ import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import { axiosWithAuth } from "../utils/AxiosWithAuth";
 
-import { TimePicker } from "@mui/lab";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { DateTimePicker } from "@mui/lab";
@@ -42,18 +41,28 @@ function ClassForm(props) {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      let time = dateTimeValue;
-      console.log(typeof time);
-      let _time = time.slice(4, 14);
+
+      let startDate = dateTimeValue.toString().slice(4, 15);
+      console.log(`startDate type: `, typeof startDate);
+      let time = dateTimeValue.toString().slice(16, 21);
+      let newTime = time.split(":");
+      if (Number(newTime[0]) > 12) {
+        newTime[0] -= 12;
+        newTime[0] += ":";
+        newTime.push(" PM");
+      } else {
+        newTime[0] += ":";
+        newTime.push(" AM");
+      }
+      const finalTime = newTime.join("");
+
       const resp = await axiosWithAuth().post(
         "https://anywherefitnesslambda.herokuapp.com/api/classes/",
-        formValues
+        { ...formValues, date: startDate, start_time: finalTime }
       );
-      console.log(_time);
       console.log(resp);
-      navigate("/dashboard");
     } catch (error) {
-      console.log(error);
+      console.log(error.response);
     }
   };
 
@@ -63,13 +72,7 @@ function ClassForm(props) {
         height: "100vh",
       }}
     >
-      <Grid
-        container
-        // direction="row"
-        // justifyContent="center"
-        // alignItems="center"
-        // sx={{ display: "flex" }}
-      >
+      <Grid container>
         <Grid item xs={12} sx={{ paddingLeft: "3.5%", paddingRight: "3.5%" }}>
           <Paper
             elevation={15}
@@ -120,7 +123,7 @@ function ClassForm(props) {
 
             <TextField
               required
-              id="class_type"
+              id="class_type_name"
               label="Class Type (e.g., zumba, pilates, jazzercise, etc.)"
               variant="outlined"
               name="class_type_name"
@@ -140,7 +143,7 @@ function ClassForm(props) {
               id="max_class_size"
               label="Max Class Size"
               variant="outlined"
-              name="class_type_name"
+              name="max_class_size"
               sx={{ marginTop: "2.25%" }}
               onChange={handleChange("max_class_size")}
             />

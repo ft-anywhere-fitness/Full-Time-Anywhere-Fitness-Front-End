@@ -21,8 +21,6 @@ const initialFormValues = {
   max_class_size: null,
 };
 
-//timepicker: Fri Jan 07 2022 14:15:00 GMT+0700 (Indochina Time)
-
 function ClassForm(props) {
   const [formValues, setFormValues] = !props
     ? useState(initialFormValues)

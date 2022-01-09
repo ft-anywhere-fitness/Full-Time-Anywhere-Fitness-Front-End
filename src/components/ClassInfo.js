@@ -1,14 +1,43 @@
-import React, { useState } from "react";
-import { Card } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { Button, Card } from "@mui/material";
 import { CardContent } from "@mui/material";
 import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { axiosWithAuth } from "../utils/AxiosWithAuth";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { BASE_URL } from "../constants";
 
 function ClassInfo(props) {
-  console.log;
-  const { classInfo } = props;
+  const [classInfo, setClassInfo] = useState();
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`${BASE_URL}/api/classes/${id}`)
+      .then((resp) => {
+        console.log(resp.data);
+        setClassInfo(resp.data);
+      })
+      .catch((err) => {
+        console.log(err.response);
+      });
+  }, []);
+
+  console.log(classInfo);
+
+  async function handleRegister(e) {
+    try {
+      e.preventDefault();
+      const resp = await axiosWithAuth().post(
+        `${BASE_URL}/api/classes/${id}/register`
+      );
+      console.log(resp);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <Card component="div">
@@ -17,33 +46,41 @@ function ClassInfo(props) {
           {classInfo.name}
         </Typography>
         <Typography variant="body2" color="inherit">
-          location: {cl.location}
+          location: {classInfo.location}
         </Typography>
         <Typography variant="body2" color="inherit">
-          date: {cl.date}
+          date: {classInfo.date}
         </Typography>
         <Typography variant="body2" color="inherit">
-          class_type: {cl.class_type_name}
+          class_type: {classInfo.classInfoass_type_name}
         </Typography>
         <Typography variant="body2" color="inherit">
-          start time: {cl.start_time}
+          start time: {classInfo.start_time}
         </Typography>
         <Typography variant="body2" color="inherit">
-          duration: {cl.duration}
+          duration: {classInfo.duration}
         </Typography>
         <Typography variant="body2" color="inherit">
-          intensity(out of 10): {cl.intensity}
+          intensity(out of 10): {classInfo.intensity}
         </Typography>
         <Typography variant="body2" color="inherit">
-          max_class_size: {cl.max_class_size}
+          max_class_size: {classInfo.max_class_size}
         </Typography>
         <Typography variant="body2" color="inherit">
-          registrants: {!cl.registrants ? 0 : cl.registrants}
+          registrants: {!classInfo.registrants ? 0 : classInfo.registrants}
         </Typography>
         <Typography variant="body2" color="inherit">
-          instructor: {cl.instructor_name}
+          instructor: {classInfo.instructor_name}
         </Typography>
       </CardContent>
+      <Button
+        variant="outlined"
+        size="large"
+        color="inherit"
+        onClick={handleRegister}
+      >
+        Register
+      </Button>
     </Card>
   );
 }

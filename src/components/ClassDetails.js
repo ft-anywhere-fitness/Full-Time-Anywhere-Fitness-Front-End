@@ -15,20 +15,10 @@ function ClassDetails(props) {
   const [deets, setDeets] = useState({});
   const [renderDeets, setRenderDeets] = useState(false);
 
-  const routeToClass = async (e) => {
-    try {
-      e.preventDefault();
-      const resp = await axiosWithAuth().get(
-        `https://anywherefitnesslambda.herokuapp.com/api/classes/${cl.class_id}`
-      );
-      console.log(resp);
-      console.log(cl.class_id);
-      navigate(`/classes/${resp.data.class_id}`);
-      <ClassInfo classInfo={resp.data} />;
-    } catch (error) {
-      console.log(error.response.data);
-    }
-  };
+  function routeToClass(e) {
+    e.preventDefault();
+    navigate(`/classes/${cl.class_id}`);
+  }
 
   return (
     <Grid item xs={3} padding="1%">

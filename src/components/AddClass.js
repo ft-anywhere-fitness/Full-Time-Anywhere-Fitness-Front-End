@@ -11,6 +11,7 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import StaticDatePicker from "@mui/lab/StaticDatePicker";
 import ClassForm from "./ClassForm";
+import { BASE_URL } from "../constants";
 
 const initialFormValues = {
   name: "",
@@ -40,7 +41,7 @@ function AddClass(props) {
     try {
       e.preventDefault();
       const resp = await axiosWithAuth().post(
-        "https://anywherefitnesslambda.herokuapp.com/api/classes/",
+        `${BASE_URL}/api/classes/`,
         formValues
       );
       console.log(resp);

@@ -7,6 +7,7 @@ import { Card, CardMedia } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ClassDetails from "./ClassDetails";
+import { BASE_URL } from "../constants";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -20,13 +21,13 @@ function Classes() {
 
   useEffect(() => {
     axios
-      .get("https://anywherefitnesslambda.herokuapp.com/api/classes")
+      .get(`${BASE_URL}/api/classes`)
       .then((resp) => {
         setClassList(resp.data);
         console.log(classList);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response);
       });
   }, []);
 

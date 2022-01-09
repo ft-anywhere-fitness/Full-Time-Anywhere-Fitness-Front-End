@@ -9,6 +9,7 @@ import { axiosWithAuth } from "../utils/AxiosWithAuth";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { DateTimePicker } from "@mui/lab";
+import { BASE_URL } from "../constants";
 
 const initialFormValues = {
   name: "",
@@ -54,10 +55,11 @@ function ClassForm(props) {
       }
       const finalTime = newTime.join("");
 
-      const resp = await axiosWithAuth().post(
-        "https://anywherefitnesslambda.herokuapp.com/api/classes/",
-        { ...formValues, date: startDate, start_time: finalTime }
-      );
+      const resp = await axiosWithAuth().post(`${BASE_URL}/api/classes/`, {
+        ...formValues,
+        date: startDate,
+        start_time: finalTime,
+      });
       console.log(resp);
     } catch (error) {
       console.log(error.response);

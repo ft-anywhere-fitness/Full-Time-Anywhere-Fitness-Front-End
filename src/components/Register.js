@@ -13,6 +13,7 @@ import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import axios from "axios";
+import { BASE_URL } from "../constants";
 
 const initialFormValues = {
   role_id: undefined,
@@ -53,17 +54,14 @@ function Register(props) {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const resp = await axios.post(
-        "https://anywherefitnesslambda.herokuapp.com/api/auth/register",
-        {
-          role_id: formValues.role_id,
-          name: formValues.name,
-          username: formValues.username,
-          password: formValues.password,
-          email: formValues.email,
-          auth: formValues.auth,
-        }
-      );
+      const resp = await axios.post(`${BASE_URL}/api/auth/register`, {
+        role_id: formValues.role_id,
+        name: formValues.name,
+        username: formValues.username,
+        password: formValues.password,
+        email: formValues.email,
+        auth: formValues.auth,
+      });
       console.log(resp);
       navigate("/login");
     } catch (error) {

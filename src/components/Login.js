@@ -18,6 +18,7 @@ import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import axios from "axios";
+import { BASE_URL } from "../constants";
 
 const initialFormValues = {
   username: "",
@@ -41,7 +42,7 @@ function Login(props) {
     try {
       e.preventDefault();
       const resp = await axiosWithAuth().post(
-        "https://anywherefitnesslambda.herokuapp.com/api/auth/login",
+        `${BASE_URL}/api/auth/login`,
         formValues
       );
       localStorage.setItem("token", resp.data.token);

@@ -74,7 +74,7 @@ function App() {
             }
           />
           <Route
-            path="/classes/:class_id"
+            path="/classes/:id"
             element={
               <PrivateRoute>
                 <ClassInfo />

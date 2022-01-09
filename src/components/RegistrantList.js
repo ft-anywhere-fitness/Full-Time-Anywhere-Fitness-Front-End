@@ -23,6 +23,7 @@ import Switch from "@mui/material/Switch";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { Button } from "@mui/material";
+import { BASE_URL } from "../constants";
 
 const headCells = [
   {
@@ -155,9 +156,7 @@ export default function RegistrantList() {
   useEffect(async () => {
     try {
       //hard coding classID for now, this will come from params later
-      const resp = await axiosWithAuth().get(
-        "https://anywherefitnesslambda.herokuapp.com/api/classes/2"
-      );
+      const resp = await axiosWithAuth().get(`${BASE_URL}/api/classes/2`);
       counter += 1;
       setRows(resp.data.registrant_list);
     } catch (error) {

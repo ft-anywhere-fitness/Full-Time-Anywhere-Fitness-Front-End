@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { Button, Card } from "@mui/material";
 import { CardContent } from "@mui/material";
 import { Grid } from "@mui/material";
@@ -9,19 +10,34 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../constants";
 
+const initialValues = {
+  class_id: null,
+  name: "",
+  location: "",
+  class_type_name: "",
+  date: "",
+  start_time: "",
+  duration: "",
+  intensity: null,
+  max_class_size: null,
+  registrants: null,
+  instructor_user_id: null,
+  instructor: {},
+};
+
 function ClassInfo(props) {
-  const [classInfo, setClassInfo] = useState();
+  const [classInfo, setClassInfo] = useState(initialValues);
   const { id } = useParams();
 
+  const navigate = useNavigate();
   useEffect(() => {
-    axios
+    axiosWithAuth()
       .get(`${BASE_URL}/api/classes/${id}`)
       .then((resp) => {
-        console.log(resp.data);
         setClassInfo(resp.data);
       })
       .catch((err) => {
-        console.log(err.response);
+        console.log(err);
       });
   }, []);
 
@@ -33,9 +49,10 @@ function ClassInfo(props) {
       const resp = await axiosWithAuth().post(
         `${BASE_URL}/api/classes/${id}/register`
       );
+      navigate("/classes");
       console.log(resp);
     } catch (error) {
-      console.log(error);
+      console.log(error.response);
     }
   }
 
@@ -52,7 +69,7 @@ function ClassInfo(props) {
           date: {classInfo.date}
         </Typography>
         <Typography variant="body2" color="inherit">
-          class_type: {classInfo.classInfoass_type_name}
+          class_type: {classInfo.class_type_name}
         </Typography>
         <Typography variant="body2" color="inherit">
           start time: {classInfo.start_time}
@@ -70,7 +87,7 @@ function ClassInfo(props) {
           registrants: {!classInfo.registrants ? 0 : classInfo.registrants}
         </Typography>
         <Typography variant="body2" color="inherit">
-          instructor: {classInfo.instructor_name}
+          instructor: {classInfo.instructor.name}
         </Typography>
       </CardContent>
       <Button

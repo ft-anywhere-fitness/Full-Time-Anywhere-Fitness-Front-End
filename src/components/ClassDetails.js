@@ -12,8 +12,19 @@ import ClassInfo from "./ClassInfo";
 function ClassDetails(props) {
   const navigate = useNavigate();
   const { cl } = props;
-  const [deets, setDeets] = useState({});
-  const [renderDeets, setRenderDeets] = useState(false);
+
+  async function handleRegister(e) {
+    try {
+      e.preventDefault();
+      const resp = await axiosWithAuth().post(
+        `${BASE_URL}/api/classes/${id}/register`
+      );
+      navigate("/classes");
+      console.log(resp);
+    } catch (error) {
+      console.log(error.response);
+    }
+  }
 
   function routeToClass(e) {
     e.preventDefault();
@@ -57,16 +68,6 @@ function ClassDetails(props) {
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions>
-          <Button
-            // size="medium"
-            color="inherit"
-            variant="outlined"
-            sx={{ display: "flex", flexDirection: "row-reverse" }}
-          >
-            Share
-          </Button>
-        </CardActions>
       </Card>
     </Grid>
   );

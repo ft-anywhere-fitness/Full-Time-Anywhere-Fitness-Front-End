@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ClassDetails from "./ClassDetails";
 import { BASE_URL } from "../constants";
+import { axiosWithAuth } from "../utils/AxiosWithAuth";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -18,9 +19,10 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function Classes() {
   const [classList, setClassList] = useState([]);
+  const [render, setRender] = useState(false);
 
   useEffect(() => {
-    axios
+    axiosWithAuth()
       .get(`${BASE_URL}/api/classes`)
       .then((resp) => {
         setClassList(resp.data);

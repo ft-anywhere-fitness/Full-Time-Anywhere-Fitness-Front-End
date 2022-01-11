@@ -32,44 +32,42 @@ function ClassDetails(props) {
   }
 
   return (
-    <Grid item xs={3} padding="1%">
-      <Card elevation={12}>
-        <CardActionArea onClick={routeToClass}>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {cl.name}
-            </Typography>
-            <Typography variant="body2" color="inherit">
-              location: {cl.location}
-            </Typography>
-            <Typography variant="body2" color="inherit">
-              date: {cl.date}
-            </Typography>
-            <Typography variant="body2" color="inherit">
-              class_type: {cl.class_type_name}
-            </Typography>
-            <Typography variant="body2" color="inherit">
-              start time: {cl.start_time}
-            </Typography>
-            <Typography variant="body2" color="inherit">
-              duration: {cl.duration}
-            </Typography>
-            <Typography variant="body2" color="inherit">
-              intensity(out of 10): {cl.intensity}
-            </Typography>
-            <Typography variant="body2" color="inherit">
-              max_class_size: {cl.max_class_size}
-            </Typography>
-            <Typography variant="body2" color="inherit">
-              registrants: {!cl.registrants ? 0 : cl.registrants}
-            </Typography>
-            <Typography variant="body2" color="inherit">
-              instructor: {cl.instructor_name}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-    </Grid>
+    <Card elevation={12} sx={{ margin: "4%" }}>
+      <CardActionArea onClick={routeToClass}>
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {cl.name}
+          </Typography>
+          <Typography variant="body2" color="inherit">
+            location: {cl.location}
+          </Typography>
+          <Typography variant="body2" color="inherit">
+            date: {cl.date}
+          </Typography>
+          <Typography variant="body2" color="inherit">
+            class_type: {cl.class_type_name}
+          </Typography>
+          <Typography variant="body2" color="inherit">
+            start time: {cl.start_time}
+          </Typography>
+          <Typography variant="body2" color="inherit">
+            duration: {cl.duration}
+          </Typography>
+          <Typography variant="body2" color="inherit">
+            intensity(out of 10): {cl.intensity}
+          </Typography>
+          <Typography variant="body2" color="inherit">
+            max_class_size: {cl.max_class_size}
+          </Typography>
+          <Typography variant="body2" color="inherit">
+            registrants: {!cl.registrants ? 0 : cl.registrants}
+          </Typography>
+          <Typography variant="body2" color="inherit">
+            instructor: {cl.instructor_name}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
   );
 }
 

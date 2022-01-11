@@ -34,18 +34,16 @@ function Classes() {
   }, []);
 
   return (
-    <div>
-      <Grid
-        container
-        direction="row"
-        justifyContent="space-around"
-        alignItems="center"
-      >
+    <Grid container direction="column">
+      <Typography variant="h2" marginTop={"4%"}>
+        Upcoming Classes
+      </Typography>
+      <Grid item padding={"5%"}>
         {classList.map((item) => {
           return <ClassDetails cl={item} />;
         })}
       </Grid>
-    </div>
+    </Grid>
   );
 }
 

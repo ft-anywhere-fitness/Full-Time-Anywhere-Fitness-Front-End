@@ -57,7 +57,7 @@ function ClassInfo(props) {
   }
 
   return (
-    <Card component="div">
+    <Card gutterBottom>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {classInfo.name}

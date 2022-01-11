@@ -149,15 +149,12 @@ export default function RegistrantList() {
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [rows, setRows] = useState([]);
-  const [test, setTest] = useState(false);
-  let counter = 0;
 
   //use this to make axios call to back end to get new list of registrants after deleting a user
   useEffect(async () => {
     try {
       //hard coding classID for now, this will come from params later
       const resp = await axiosWithAuth().get(`${BASE_URL}/api/classes/2`);
-      counter += 1;
       setRows(resp.data.registrant_list);
     } catch (error) {
       console.log(error);
@@ -211,10 +208,6 @@ export default function RegistrantList() {
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
-
-  const handleTest = () => {
-    setTest(!test);
-  };
 
   return (
     <Paper

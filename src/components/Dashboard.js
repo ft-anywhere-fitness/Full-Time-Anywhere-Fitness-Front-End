@@ -4,6 +4,7 @@ import RegistrantList from "./RegistrantList";
 import { Grid, Paper } from "@mui/material";
 import { Box } from "@mui/system";
 import Classes from "./Classes";
+import MyClasses from "./MyClasses";
 
 const Dashboard = (props) => {
   return (
@@ -12,7 +13,7 @@ const Dashboard = (props) => {
         <Grid item xs={6}>
           <Box>
             <Paper elevation={21}>
-              <Classes />
+              <MyClasses />
             </Paper>
           </Box>
         </Grid>
